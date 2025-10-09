@@ -3,39 +3,22 @@
 </section>
 
 <section class="acf-event-info">
-    <h2>November 8 and 9, 2025 at Pioneer Farms in North Austin</h2>
+    <h2 class="mat-headline-medium">November 8 and 9, 2025 at Pioneer Farms in North Austin</h2>
 </section>
 
-<section class="acf-card-grid">
-    <div class="acf-card">
-        <img src="images/sections/music.jpg" alt="Celtic Music & Dance" />
-        <h3>CELTIC MUSIC & DANCE</h3>
-        <p>The Austin Celtic Festival offers the highest quality regional and international Celtic artists with an
-            extraordinary lineup of talent.</p>
+<div class="acf-card-grid">
+    <div class="acf-card" *ngFor="let card of cards">
+        <img class="acf-card-image" [src]="card.img" [alt]="card.alt" />
+        <div class="acf-card-title">{{ card.title }}</div>
+        <div class="acf-card-content">
+            <p>{{ card.content }}</p>
+        </div>
     </div>
-    <div class="acf-card">
-        <img src="images/sections/games.jpg" alt="Highland Games" />
-        <h3>HIGHLAND GAMES</h3>
-        <p>The competition can be observed at the Festival all day both Saturday and Sunday.</p>
-    </div>
-    <div class="acf-card">
-        <img src="images/sections/workshops.jpg" alt="Workshops/Celtic History" />
-        <h3>WORKSHOPS/CELTIC HISTORY</h3>
-        <p>Participate as a student in the ACF School of Traditional Arts. From beginner courses to master workshops in
-            music, lectures, you can leave the ACF with new techniques, insights and experiences.</p>
-    </div>
-    <div class="acf-card">
-        <img src="images/sections/animals.jpg" alt="Celtic Animals" />
-        <h3>CELTIC ANIMALS</h3>
-        <p>The Fest showcases many varieties of Celtic dog breeds, Mini horse breeds, and more.<br>Sorry, NO PETS
-            ALLOWED.<br>Only Celtic Dogs registered for our parade.</p>
-    </div>
-
-</section>
+</div>
 
 <section class="acf-info-card">
     <div>
-        <p>The Austin Celtic Festival is a premier celebration of Celtic culture, music, and arts, held annually in
+        <p class="mat-body-large">The Austin Celtic Festival is a premier celebration of Celtic culture, music, and arts, held annually in
             Austin, Texas. This vibrant festival brings together top-tier performers, musicians, dancers, and artists
             from around the world to showcase the rich traditions of Ireland, Scotland, Wales, and other Celtic nations.
         </p>

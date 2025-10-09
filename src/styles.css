@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
-/* Celtic Material Theme Colors */
+/* Celtic Material Theme Colors + Material Design 3 + OKLCH */
 :root {
 	--celtic-navy: #1e2a44;
 	--celtic-gold: #c8a45a;
@@ -14,25 +14,45 @@
 	--celtic-green-100: #b7d1c0;
 	--celtic-rust-100: #e2baa6;
 	/* ... add more as needed ... */
+
+	/* Material Design 3 (M3) Theme Variables */
+	--md-source: var(--celtic-navy);
+	--md-primary: var(--celtic-gold);
+	--md-on-primary: var(--celtic-cream);
+	--md-secondary: var(--celtic-green);
+	--md-on-secondary: var(--celtic-cream);
+	--md-surface: var(--celtic-cream);
+	--md-on-surface: var(--celtic-navy);
+	--md-error: var(--celtic-rust);
+	--md-on-error: var(--celtic-cream);
+
+	/* OKLCH color space for modern color management */
+	--oklch-navy: oklch(30% 0.08 260);
+	--oklch-gold: oklch(80% 0.13 80);
+	--oklch-cream: oklch(98% 0.02 90);
+	--oklch-rust: oklch(60% 0.15 30);
+	--oklch-green: oklch(35% 0.09 140);
 }
 
 body {
-	background: var(--celtic-cream);
-	color: var(--celtic-navy);
+	background: #ede6d6;
+	color: var(--md-on-surface, #222);
 	font-family: 'Inter', 'Calistoga', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+	font-size: 1rem;
+	line-height: 1.5;
 }
 
 h1, .celtic-h1 {
 	font-family: 'Calistoga', serif;
-	color: var(--celtic-navy);
+	color: var(--md-on-surface);
 }
 
 header {
-	background: var(--celtic-navy);
-	color: var(--celtic-gold);
+	background: var(--md-source);
+	color: var(--md-primary);
 }
 
 footer {
-	background: var(--celtic-green);
-	color: var(--celtic-cream);
+	background: var(--md-secondary);
+	color: var(--md-on-secondary);
 }

@@ -1,21 +1,21 @@
-
 .celtic-header {
-	background: var(--celtic-navy);
-	color: var(--celtic-gold);
-	padding: 2rem 0 1rem 0;
-    
+  background: var(--md-source);
+  color: var(--md-on-primary);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.celtic-h1 {
-	font-family: 'Calistoga', serif;
-	color: var(--celtic-gold);
-	text-align: center;
-	margin: 0;
+.mat-headline-large {
+  font-family: 'Calistoga', serif;
+  color: var(--md-on-primary);
+  text-align: center;
 }
 
-.celtic-h2 {
-	font-family: 'Calistoga', serif;
-	color: var(--celtic-gold);
-	text-align: center;
-	margin: 0;
+.mat-title {
+  font-family: 'Calistoga', serif;
+  color: var(--md-on-primary);
+  text-align: center;
 }

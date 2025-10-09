@@ -1,4 +1,3 @@
-
 .acf-hero {
 	width: 100%;
 	background: var(--celtic-cream);
@@ -24,17 +23,19 @@
 }
 
 .acf-card-grid {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 2rem;
-		margin: 0 auto;
-		max-width: 1100px;
-		padding: 2rem 1rem;
+  margin: 0 auto;
+  max-width: 1100px;
+  padding: 2rem 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 2rem;
 }
 
 @media (max-width: 700px) {
 	.acf-card-grid {
 		grid-template-columns: 1fr;
+		grid-template-rows: auto;
 		gap: 1.5rem;
 		padding: 1rem 0.5rem;
 	}
@@ -72,32 +73,77 @@
 }
 
 .acf-card {
-	background: var(--celtic-cream);
-	border: 2px solid var(--celtic-gold);
-	border-radius: 16px;
-	box-shadow: 0 2px 12px rgba(30,42,68,0.06);
-	padding: 1.5rem;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	text-align: center;
+  border-radius: 20px;
+  background: #fff;
+  color: #222;
+  box-shadow: 0 8px 32px rgba(30,42,68,0.32);
+  border: 5px solid #c8a45a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 340px;
+  justify-content: flex-start;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  margin: 1.5rem;
+  overflow: hidden;
+  transition: box-shadow 0.2s, border-color 0.2s;
 }
 
-.acf-card img {
-	width: 100%;
-	max-width: 220px;
-	border-radius: 8px;
-	margin-bottom: 1rem;
+.acf-card:hover {
+  box-shadow: 0 16px 48px rgba(30,42,68,0.38);
+  border-color: #1e2a44;
 }
 
-.acf-card h3 {
-	font-family: 'Calistoga', serif;
-	color: var(--celtic-navy);
-	font-size: 1.25rem;
-	margin-bottom: 0.5rem;
+.acf-card-image {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 160px !important;
+  max-height: 160px !important;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0 !important;
+  margin: 0 0 1rem 0;
+  display: block;
+  background: #fff;
+  pointer-events: none;
 }
 
-.acf-card p {
-	color: var(--celtic-navy);
-	font-size: 1rem;
+.acf-card-title {
+  font-family: 'Calistoga', serif;
+  color: #c8a45a;
+  text-align: center;
+  margin: 0.5rem 0 0.5rem 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.acf-card-content {
+  font-size: 1rem;
+  color: #222;
+  text-align: center;
+  margin: 0 0.5rem;
+  word-break: break-word;
+  padding-bottom: 0.5rem;
+}
+
+body {
+  background: #ede6d6 !important;
+  color: #222;
+  font-family: 'Inter', 'Calistoga', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 700px) {
+  .acf-card-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1.5rem;
+    padding: 1rem 0.5rem;
+  }
+  .acf-card-image {
+    width: 100% !important;
+    height: 100px !important;
+    max-width: 100% !important;
+    max-height: 100px !important;
+  }
 }
