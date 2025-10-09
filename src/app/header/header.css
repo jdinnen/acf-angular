@@ -1,21 +1,64 @@
 .celtic-header {
-  background: var(--md-source);
-  color: var(--md-on-primary);
-  padding: 0;
+  background: var(--md-source, #162447);
+  color: var(--md-on-primary, #fff);
+  padding: 5rem 0 4rem 0;
+  min-height: 13rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  width: 100%;
+  margin: 0;
+  border-radius: 0;
+  overflow: hidden;
 }
 
-.mat-headline-large {
+.celtic-header .mat-headline-large {
   font-family: 'Calistoga', serif;
-  color: var(--md-on-primary);
+  color: var(--md-on-primary, #fff);
   text-align: center;
+  font-size: 4.2rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.18);
+  margin-bottom: 1.2rem;
 }
 
-.mat-title {
+.celtic-header .mat-title {
   font-family: 'Calistoga', serif;
-  color: var(--md-on-primary);
+  color: var(--md-on-primary, #fff);
   text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.12);
+}
+
+@media (max-width: 900px) {
+  .celtic-header {
+    padding: 3rem 0 2.5rem 0;
+    min-height: 8.5rem;
+  }
+  .celtic-header .mat-headline-large {
+    font-size: 2.7rem;
+    margin-bottom: 0.7rem;
+  }
+  .celtic-header .mat-title {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .celtic-header {
+    padding: 1.5rem 0 1.2rem 0;
+    min-height: 5.5rem;
+  }
+  .celtic-header .mat-headline-large {
+    font-size: 1.5rem;
+    margin-bottom: 0.4rem;
+  }
+  .celtic-header .mat-title {
+    font-size: 0.9rem;
+  }
 }
