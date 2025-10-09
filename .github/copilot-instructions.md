@@ -1,5 +1,28 @@
 # Copilot Instructions for ACF Angular
 
+## Project Goals
+
+This project is a full remake of [austincelticfestival.com](https://austincelticfestival.com) using Angular 20.3, with a focus on modern Material Design principles and standard Angular coding practices. The goal is to deliver a beautiful, accessible, and high-performance web experience that reflects the festival’s brand and content.
+
+## Modern Angular & Material Design Best Practices (2025)
+
+- **Use standalone components** for all UI features; avoid NgModules.
+- **Leverage Angular signals** for reactive state management and fine-grained updates.
+- **Adopt Material Design 3 (M3) principles**:
+  - Use Angular Material components for consistent, accessible, and responsive UI.
+  - Apply theming via CSS custom properties and OKLCH color space.
+  - Prioritize accessibility (ARIA, keyboard navigation, color contrast).
+  - Ensure mobile-first layouts and touch-friendly interactions.
+- **Organize code modularly**: keep components, styles, and templates co-located.
+- **Strict TypeScript config**: enforce strict typing and code style (see `tsconfig.json`, Prettier).
+- **Performance**:
+  - Use SSR, SSG, and hydration for fast initial loads and SEO.
+  - Optimize images and static assets; store all images in `public/images/` (already done).
+  - Use deferred loading and lazy routes for large features.
+- **Testing**: maintain high coverage with Karma/Jasmine; write `.spec.ts` for all logic and UI.
+- **Accessibility**: audit regularly with tools (Lighthouse, axe) and follow Material guidelines.
+- **Designer-developer collaboration**: use Figma or Material tools for design handoff; keep UI consistent with Material specs.
+
 ## Project Overview
 
 This is a modern Angular 20.3 application with SSR (Server-Side Rendering) capabilities, using the latest standalone component architecture and Angular's new zoneless change detection.
