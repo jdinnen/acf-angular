@@ -1,0 +1,13 @@
+
+.celtic-footer {
+	background: var(--celtic-green);
+	color: var(--celtic-cream);
+	padding: 1rem 0 1rem 2rem;
+	font-size: 1rem;
+    vertical-align: middle;
+}
+
+.celtic-footer div {
+  text-align: left;
+  font-size: 1rem;
+}

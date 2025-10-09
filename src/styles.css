@@ -1,1 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Celtic Material Theme Colors */
+:root {
+	--celtic-navy: #1e2a44;
+	--celtic-gold: #c8a45a;
+	--celtic-cream: #f3efe6;
+	--celtic-rust: #b4633a;
+	--celtic-green: #213428;
+
+	/* Accent palette (see attachment) */
+	--celtic-blue-100: #adbddb;
+	--celtic-gold-100: #e1cea7;
+	--celtic-green-100: #b7d1c0;
+	--celtic-rust-100: #e2baa6;
+	/* ... add more as needed ... */
+}
+
+body {
+	background: var(--celtic-cream);
+	color: var(--celtic-navy);
+	font-family: 'Inter', 'Calistoga', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+h1, .celtic-h1 {
+	font-family: 'Calistoga', serif;
+	color: var(--celtic-navy);
+}
+
+header {
+	background: var(--celtic-navy);
+	color: var(--celtic-gold);
+}
+
+footer {
+	background: var(--celtic-green);
+	color: var(--celtic-cream);
+}

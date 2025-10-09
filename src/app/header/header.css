@@ -1,0 +1,21 @@
+
+.celtic-header {
+	background: var(--celtic-navy);
+	color: var(--celtic-gold);
+	padding: 2rem 0 1rem 0;
+    
+}
+
+.celtic-h1 {
+	font-family: 'Calistoga', serif;
+	color: var(--celtic-gold);
+	text-align: center;
+	margin: 0;
+}
+
+.celtic-h2 {
+	font-family: 'Calistoga', serif;
+	color: var(--celtic-gold);
+	text-align: center;
+	margin: 0;
+}
