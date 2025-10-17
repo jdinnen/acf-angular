@@ -532,7 +532,7 @@
 
 /* Always hide hamburger by default */
 .menu-button {
-  display: inline-flex !important;
+  display: none;
   position: fixed !important;
   top: 16px;
   right: 16px;
@@ -617,6 +617,7 @@
 .acf-hero-celtic {
   color: #2b7a2b;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.08);
+}
 
   @media (max-width: 900px) {
     .acf-hero-title {
@@ -685,7 +686,7 @@
       display: block;
     }
   }
-}
+
 
 .acf-hero-date {
   font-family: 'Calistoga', serif;

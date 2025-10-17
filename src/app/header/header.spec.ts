@@ -22,15 +22,13 @@ describe('HeaderComponent', () => {
             const button = compiled.querySelector('.menu-button') as HTMLElement;
             expect(button).toBeTruthy();
             button.style.display = 'inline-flex';
-            const component = fixture.componentInstance;
-            // Sidenav removed in dialog refactor
-            // Sidenav removed in dialog refactor
             button.click();
             fixture.detectChanges();
             await fixture.whenStable();
-            // Sidenav removed in dialog refactor
-            // Check mobile nav items
-            const mobileNav = compiled.querySelector('.mobile-nav');
+            // Query the overlay container for the dialog content
+            const overlayContainer = document.querySelector('.cdk-overlay-container') as HTMLElement;
+            expect(overlayContainer).toBeTruthy();
+            const mobileNav = overlayContainer.querySelector('.mobile-nav');
             expect(mobileNav).toBeTruthy();
             expect(mobileNav!.children.length).toBeGreaterThan(0);
         });
