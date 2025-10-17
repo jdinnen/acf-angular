@@ -1,15 +1,98 @@
 .celtic-footer {
   background: var(--md-secondary);
   color: var(--md-on-secondary);
-  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 !important;
+  padding: 1.2rem 0;
 }
 
 .mat-body-medium {
   font-size: 1rem;
   color: var(--md-on-secondary);
+  text-align: center;
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .celtic-footer div {
   text-align: left;
   font-size: 1rem;
+}
+
+/* Layout for footer main area */
+.footer-social-bar {
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  background: none;
+}
+
+.footer-icon img {
+  width: 32px;
+  height: 32px;
+  display: block;
+  transition: transform 0.2s;
+}
+
+.footer-icon img:hover {
+  transform: scale(1.12);
+}
+
+/* Copyright font size and alignment for mobile */
+@media (max-width: 700px) {
+  .footer-container {
+    background: var(--md-secondary);
+    color: var(--md-on-secondary);
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1.2rem 0 1.2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-content {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-copyright {
+    font-size: 1rem;
+    color: var(--md-on-secondary);
+    text-align: center;
+    width: 100%;
+    margin-bottom: 1.1rem;
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .footer-social-bar {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
 }
