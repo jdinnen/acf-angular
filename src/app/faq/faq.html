@@ -1,0 +1,13 @@
+<div class="faq-page">
+  <h1 class="faq-title">Frequently Asked Questions</h1>
+  <mat-accordion>
+    @for (faq of faqs; track $index) {
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>{{ faq.question }}</mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="faq-answer">{{ faq.answer }}</div>
+      </mat-expansion-panel>
+    }
+  </mat-accordion>
+</div>

@@ -7,13 +7,15 @@
 </section>
 
 <div class="acf-card-grid">
-    <div class="acf-card" *ngFor="let card of cards">
+    @for (card of cards; track $index) {
+      <div class="acf-card">
         <img class="acf-card-image" [src]="card.img" [alt]="card.alt" />
         <div class="acf-card-title">{{ card.title }}</div>
         <div class="acf-card-content">
             <p>{{ card.content }}</p>
         </div>
-    </div>
+      </div>
+    }
 </div>
 
 <section class="acf-info-card">

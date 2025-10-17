@@ -9,6 +9,7 @@ import { HighlandGamesPage } from './highland-games/highland-games';
 import { VenuePage } from './venue/venue';
 import { VendorsPage } from './vendors/vendors';
 import { VolunteerPage } from './volunteer/volunteer';
+import { FaqComponent } from './faq/faq';
 
 export const routes: Routes = [
 	{ path: '', component: Home },
@@ -20,5 +21,6 @@ export const routes: Routes = [
 	{ path: 'highland-games', component: HighlandGamesPage },
 	{ path: 'venue', component: VenuePage },
 	{ path: 'vendors', component: VendorsPage },
-	{ path: 'volunteer', component: VolunteerPage }
+	{ path: 'volunteer', component: VolunteerPage },
+	{ path: 'faqs', component: FaqComponent }
 ];
