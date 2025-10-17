@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatExpansionModule } from '@angular/material/expansion';
+
 @Component({
   selector: 'app-tickets',
   standalone: true,
-  imports: [],
-  template: `
-    <main>
-      <h1 style="text-align:center;font-family:'Calistoga',serif;">Tickets</h1>
-    </main>
-  `
+  templateUrl: './tickets.html',
+  styleUrls: ['./tickets.css'],
+  imports: [MatCardModule, MatButtonModule, MatExpansionModule]
 })
-export class TicketsPage {}
+export class TicketsComponent {}

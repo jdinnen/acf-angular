@@ -1,3 +1,8 @@
+/* Ensure Angular Material overlays always cover all app content */
+.cdk-overlay-container {
+	z-index: 2147483647 !important;
+}
+
 /* You can add global styles to this file, and also import other style files */
 
 /* Celtic Material Theme Colors + Material Design 3 + OKLCH */
@@ -34,7 +39,9 @@
 	--oklch-green: oklch(35% 0.09 140);
 }
 
-body, html, app-root {
+body,
+html,
+app-root {
 	background: #ede6d6;
 	color: var(--md-on-surface, #222);
 	font-family: 'Inter', 'Calistoga', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -47,7 +54,8 @@ body, html, app-root {
 	height: 100%;
 }
 
-h1, .celtic-h1 {
+h1,
+.celtic-h1 {
 	font-family: 'Calistoga', serif;
 	color: var(--md-on-surface);
 }
@@ -56,5 +64,3 @@ header {
 	background: var(--md-source);
 	color: var(--md-primary);
 }
-
-

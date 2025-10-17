@@ -1,7 +1,7 @@
-import { TicketsPage } from './tickets';
-describe('TicketsPage', () => {
-  it('should render the Tickets title', () => {
-    const page = new TicketsPage();
-    expect(page).toBeTruthy();
+import { TicketsComponent } from './tickets';
+describe('TicketsComponent', () => {
+  it('should create the Tickets component', () => {
+    const component = new TicketsComponent();
+    expect(component).toBeTruthy();
   });
 });

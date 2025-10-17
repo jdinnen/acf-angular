@@ -4,47 +4,46 @@ import { Component, ViewChild, inject } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
-import { MatSidenavModule, MatSidenav } from '@angular/material/sidenav';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatDividerModule } from '@angular/material/divider';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Router, NavigationEnd } from '@angular/router';
 import { NAV_CONFIG, NavItem } from './nav-config';
+import { MobileMenuDialogComponent } from './mobile-menu-dialog';
 
 
-interface NavItemWithExpand extends NavItem {
-  expanded?: boolean;
-}
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, RouterModule, MatToolbarModule, MatMenuModule, MatButtonModule, MatIconModule, MatSidenavModule, MatDividerModule],
+  imports: [CommonModule, RouterModule, MatToolbarModule, MatMenuModule, MatButtonModule, MatIconModule, MatDialogModule, MatDividerModule],
   templateUrl: './header.html',
   styleUrl: './header.css'
 })
 export class HeaderComponent {
-  nav: NavItemWithExpand[];
-  @ViewChild(MatSidenav, { static: true }) sidenav!: MatSidenav;
+  nav: NavItem[];
   currentUrl: string;
-
-  constructor(private router: Router) {
-    // Add expanded property to items with children
-    this.nav = NAV_CONFIG.map(item => item.children ? { ...item, expanded: false } : { ...item });
+  constructor(private router: Router, private dialog: MatDialog) {
+    this.nav = NAV_CONFIG;
     this.currentUrl = this.router.url;
     this.router.events.subscribe((e) => {
       if (e instanceof NavigationEnd) this.currentUrl = e.urlAfterRedirects || e.url;
     });
   }
 
-  toggleSidenav() {
-    if (this.sidenav) {
-      this.sidenav.toggle();
-    }
-  }
-
-  closeSidenav() {
-    if (this.sidenav) {
-      this.sidenav.close();
-    }
+  openMobileMenu() {
+    const dialogRef = this.dialog.open(MobileMenuDialogComponent, {
+      data: { nav: this.nav },
+      panelClass: 'mobile-menu-dialog-panel',
+      hasBackdrop: true,
+      autoFocus: false,
+      restoreFocus: false,
+      width: '80vw',
+      maxWidth: '340px',
+      position: { left: '0', top: '0' },
+      height: '100vh',
+      disableClose: true
+    });
+    dialogRef.componentInstance.close.subscribe(() => dialogRef.close());
   }
 
   isActive(path: string) {

@@ -8,19 +8,20 @@
 
 <div class="acf-card-grid">
     @for (card of cards; track $index) {
-      <div class="acf-card">
+    <div class="acf-card">
         <img class="acf-card-image" [src]="card.img" [alt]="card.alt" />
         <div class="acf-card-title">{{ card.title }}</div>
         <div class="acf-card-content">
             <p>{{ card.content }}</p>
         </div>
-      </div>
+    </div>
     }
 </div>
 
 <section class="acf-info-card">
     <div>
-        <p class="mat-body-large">The Austin Celtic Festival is a premier celebration of Celtic culture, music, and arts, held annually in
+        <p class="mat-body-large">The Austin Celtic Festival is a premier celebration of Celtic culture, music, and
+            arts, held annually in
             Austin, Texas. This vibrant festival brings together top-tier performers, musicians, dancers, and artists
             from around the world to showcase the rich traditions of Ireland, Scotland, Wales, and other Celtic nations.
         </p>
