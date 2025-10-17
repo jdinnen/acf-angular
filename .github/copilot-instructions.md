@@ -128,4 +128,17 @@ This is a modern Angular 20.3 application with SSR (Server-Side Rendering) capab
 - This ensures compatibility with Angular v20+ and avoids deprecation warnings.
 - See `header.html` for a reference implementation.
 
----
+## Enforced Angular Best Practices (2025)
+
+- Always use **standalone components**; do not use NgModules for new features.
+- Use **Angular signals** for reactive state management (`signal()` API) instead of RxJS for local state.
+- Prefer **Angular Material** components for UI, following Material Design 3 (M3) guidelines.
+- Use **CSS custom properties** and OKLCH color space for theming and color management.
+- Ensure **accessibility**: ARIA attributes, keyboard navigation, and color contrast.
+- Write **strictly typed** TypeScript; follow project lint and Prettier rules.
+- Use **SSR/SSG/hydration** for performance and SEO.
+- Optimize images and static assets; store in `public/images/`.
+- Use **deferred loading** and **lazy routes** for large features.
+- Maintain **high test coverage** with Karma/Jasmine; all logic and UI must have `.spec.ts` tests.
+- **Never use deprecated Angular template syntax**: always use `@if`, `@for` blocks, never `*ngIf`, `*ngFor`.
+- Co-locate component `.ts`, `.html`
