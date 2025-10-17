@@ -34,12 +34,17 @@
 	--oklch-green: oklch(35% 0.09 140);
 }
 
-body {
+body, html, app-root {
 	background: #ede6d6;
 	color: var(--md-on-surface, #222);
 	font-family: 'Inter', 'Calistoga', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 	font-size: 1rem;
 	line-height: 1.5;
+	margin: 0 !important;
+	padding: 0 !important;
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
 }
 
 h1, .celtic-h1 {
@@ -52,7 +57,4 @@ header {
 	color: var(--md-primary);
 }
 
-footer {
-	background: var(--md-secondary);
-	color: var(--md-on-secondary);
-}
+
