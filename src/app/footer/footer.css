@@ -1,3 +1,16 @@
+.footer-container {
+  background: var(--md-secondary);
+  color: var(--md-on-secondary);
+  width: 100%;
+  min-width: 100vw;
+  box-sizing: border-box;
+  padding: 1.2rem 0 1.2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
 .celtic-footer {
   background: var(--md-secondary);
   color: var(--md-on-secondary);
