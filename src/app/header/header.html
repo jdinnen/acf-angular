@@ -1,4 +1,68 @@
-<mat-toolbar color="primary" class="celtic-header" role="banner" style="justify-content: center; flex-direction: column; align-items: center;">
-  <span class="mat-headline-large" style="margin-bottom: 0.25rem;">Austin Celtic Festival</span>
-  <span class="mat-title">November 8 and 9, 2025</span>
-</mat-toolbar>
+
+
+<mat-sidenav-container class="mobile-sidenav">
+  <mat-sidenav #sidenav class="mobile-sidenav-panel" mode="over" (closedStart)="closeSidenav()">
+    <nav class="mobile-nav">
+      <ng-container *ngFor="let item of nav">
+        <div class="mobile-item">
+          <div *ngIf="item.children?.length; else mobileSingle" class="mobile-expandable">
+            <button mat-button class="mobile-expand-btn mat-mdc-ripple" (click)="item.expanded = !item.expanded" [attr.aria-expanded]="item.expanded">
+              <span>{{ item.label }}</span>
+              <mat-icon class="expand-icon" [class.expanded]="item.expanded">{{ item.expanded ? 'expand_more' : 'chevron_right' }}</mat-icon>
+            </button>
+            <mat-divider *ngIf="item.expanded"></mat-divider>
+            <ul *ngIf="item.expanded" class="mobile-submenu">
+              <li *ngFor="let child of item.children">
+                <a mat-button class="mat-mdc-ripple" (click)="closeSidenav()" [routerLink]="child.path">{{ child.label }}</a>
+              </li>
+            </ul>
+          </div>
+          <ng-template #mobileSingle>
+            <a mat-button class="mat-mdc-ripple" (click)="closeSidenav()" [routerLink]="item.path">{{ item.label }}</a>
+          </ng-template>
+        </div>
+      </ng-container>
+    </nav>
+    <!-- Material close button -->
+    <button mat-icon-button class="close-button" (click)="closeSidenav()" aria-label="Close menu">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <!-- Hamburger menu button for mobile, always present in DOM -->
+    <button mat-icon-button class="menu-button" (click)="toggleSidenav()" aria-label="Menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <!-- Hero/title area -->
+    <div class="celtic-header" role="banner">
+      <h1 class="acf-hero-title">
+        <span class="acf-hero-main">Austin</span>
+        <span class="acf-hero-celtic">Celtic</span>
+        <span class="acf-hero-main">Festival</span>
+      </h1>
+      <div class="acf-hero-date">November 8 and 9, 2025</div>
+      <div class="acf-hero-buttons">
+        <a class="acf-hero-btn" href="/tickets">GET TICKETS</a>
+        <a class="acf-hero-btn" href="/schedules">SCHEDULES</a>
+      </div>
+    </div>
+    <!-- Main nav bar directly below hero -->
+    <mat-toolbar class="nav-bar" role="navigation">
+      <nav class="desktop-nav" aria-label="Primary">
+        <ng-container *ngFor="let item of nav">
+          <ng-container *ngIf="item.children?.length; else singleLink">
+            <button mat-button [matMenuTriggerFor]="menu" class="nav-link" [class.active]="isActiveForItem(item)">
+              {{ item.label }}
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item *ngFor="let child of item.children" [routerLink]="child.path" (click)="closeSidenav()" [class.active]="isActive(child.path || '')">{{ child.label }}</button>
+            </mat-menu>
+          </ng-container>
+          <ng-template #singleLink>
+            <a mat-button class="nav-link" [routerLink]="item.path" [class.active]="isActiveForItem(item)">{{ item.label }}</a>
+          </ng-template>
+        </ng-container>
+      </nav>
+    </mat-toolbar>
+  </mat-sidenav-content>
+</mat-sidenav-container>

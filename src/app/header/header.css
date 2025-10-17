@@ -1,64 +1,634 @@
-.celtic-header {
-  background: var(--md-source, #162447);
-  color: var(--md-on-primary, #fff);
-  padding: 5rem 0 4rem 0;
-  min-height: 13rem;
+.mobile-expandable {
+  display: flex;
+  flex-direction: column;
+}
+.mobile-expand-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #e5dcc2;
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0.2rem 0 0.2rem 0.2rem;
+  border-radius: 4px;
+  transition: background 0.18s, color 0.18s;
+  cursor: pointer;
+  font-family: 'Calistoga', serif;
+  gap: 0.18rem;
+}
+.mobile-expand-btn:hover, .mobile-expand-btn:focus {
+  background: rgba(255,255,255,0.06);
+}
+.expand-icon {
+  font-size: 1.3rem;
+  transition: transform 0.2s cubic-bezier(.4,0,.2,1);
+  margin-left: 0.05rem;
+}
+.expand-icon.expanded {
+  transform: rotate(180deg);
+}
+.mobile-submenu {
+  margin: 0.5rem 0 0.5rem 1.2rem;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.mobile-sidenav-panel {
+  background: #181204 !important;
+  color: #e5dcc2 !important;
+  z-index: 20000 !important;
+  width: 80vw;
+  max-width: 340px;
+  height: 100vh !important;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  box-shadow: 2px 0 24px rgba(0,0,0,0.28);
+  padding: 2.2rem 1.2rem 1.2rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  font-family: 'Calistoga', serif;
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.mobile-item {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #e5dcc2;
+  padding: 0.2rem 0 0.2rem 0.2rem;
+  border-radius: 4px;
+  transition: background 0.18s, color 0.18s;
+}
+.mobile-item a {
+  color: #e5dcc2;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  padding: 0.1rem 0.2rem;
+  display: block;
+}
+.mobile-item a.active, .mobile-item.active, .mobile-item summary.active {
+  color: #ffb300 !important;
+  background: none;
+}
+.mobile-item summary {
+  cursor: pointer;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #e5dcc2;
+  outline: none;
+  border: none;
+  background: none;
+  padding: 0.1rem 0.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.mobile-item details[open] > summary {
+  color: #ffb300;
+}
+.mobile-item ul {
+  margin: 0.5rem 0 0.5rem 1.2rem;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.mobile-item li a {
+  font-size: 1.1rem;
+  color: #e5dcc2;
+  font-weight: 600;
+  padding: 0.1rem 0.2rem;
+  border-radius: 2px;
+  transition: color 0.18s;
+}
+.mobile-item li a.active {
+  color: #ffb300 !important;
+}
+
+/* Hamburger and close button styling */
+.menu-button, .close-button {
+  position: fixed !important;
+  top: 18px;
+  right: 18px;
+  z-index: 99999 !important;
+  background: #2a220e;
+  color: #fff;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1 !important;
+  visibility: visible !important;
+  font-size: 2rem;
+}
+.close-button {
+  right: 18px;
+  top: 18px;
+  background: #2a220e;
+  color: #fff;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  border-radius: 8px;
+  font-size: 2rem;
+}
+/* Mobile sidenav container production styles */
+.mobile-sidenav {
+  min-height: 0 !important;
+  border: none !important;
+}
+/* Mobile sidenav panel production styles */
+.mobile-sidenav-panel {
+  background: #2a220e !important;
+  color: #fff !important;
+  z-index: 20000 !important;
+  width: 80vw;
+  max-width: 320px;
+  height: 100vh !important;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  box-shadow: 2px 0 12px rgba(0,0,0,0.18);
+  padding: 1.5rem 1rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+/* Main title and celtic word split for mobile control */
+.acf-hero-title {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  width: 100%;
-  margin: 0;
-  border-radius: 0;
-  overflow: hidden;
+  gap: 0;
 }
-
-.celtic-header .mat-headline-large {
+.acf-hero-main {
   font-family: 'Calistoga', serif;
-  color: var(--md-on-primary, #fff);
-  text-align: center;
-  font-size: 4.2rem;
+  color: #2a220e;
   font-weight: 900;
+  font-size: 5rem;
   letter-spacing: 0.04em;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.18);
-  margin-bottom: 1.2rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.18), 0 1px 2px rgba(0,0,0,0.10);
+  line-height: 1.05;
 }
-
-.celtic-header .mat-title {
+.acf-hero-celtic {
   font-family: 'Calistoga', serif;
-  color: var(--md-on-primary, #fff);
+  color: #2b7a2b;
+  font-weight: 900;
+  font-size: 5.5rem;
+  letter-spacing: 0.04em;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.08);
+  line-height: 1.05;
+  margin: 0.1rem 0 0.1rem 0;
+  display: block;
   text-align: center;
-  font-size: 2.2rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  text-shadow: 1px 1px 6px rgba(0,0,0,0.12);
 }
-
 @media (max-width: 900px) {
-  .celtic-header {
-    padding: 3rem 0 2.5rem 0;
-    min-height: 8.5rem;
+  .acf-hero-title {
+    gap: 0;
   }
-  .celtic-header .mat-headline-large {
+  .acf-hero-main {
+    font-size: 2.2rem;
+    line-height: 1.02;
+    margin: 0;
+    text-shadow: 1.5px 1.5px 2px rgba(0,0,0,0.13);
+  }
+  .acf-hero-celtic {
     font-size: 2.7rem;
-    margin-bottom: 0.7rem;
+    font-weight: 900;
+    margin: 0.09rem 0 0.09rem 0;
+    text-shadow: 1.5px 1.5px 2px rgba(0,0,0,0.10);
+    letter-spacing: 0.01em;
+    display: block;
+    text-align: center;
   }
-  .celtic-header .mat-title {
-    font-size: 1.3rem;
+  .acf-hero-date {
+    font-size: 0.7rem;
+    margin-bottom: 0.2rem;
+    font-weight: 600;
+  }
+  .acf-hero-buttons {
+    flex-direction: column;
+    gap: 0.2rem;
+    margin-bottom: 0.05rem;
+  }
+  .acf-hero-btn {
+    font-size: 0.7rem;
+    padding: 0.22rem 0.5rem;
+    width: 88vw;
+    max-width: 160px;
+    margin: 0 auto 0.08rem auto;
+    display: block;
   }
 }
 
 @media (max-width: 600px) {
-  .celtic-header {
-    padding: 1.5rem 0 1.2rem 0;
-    min-height: 5.5rem;
+  .acf-hero-title {
+    gap: 0;
   }
-  .celtic-header .mat-headline-large {
+  .acf-hero-main {
     font-size: 1.5rem;
-    margin-bottom: 0.4rem;
+    line-height: 1.01;
+    margin: 0;
+    text-shadow: 1.2px 1.2px 1.5px rgba(0,0,0,0.10);
   }
-  .celtic-header .mat-title {
-    font-size: 0.9rem;
+  .acf-hero-celtic {
+    font-size: 1.9rem;
+    font-weight: 900;
+    margin: 0.06rem 0 0.06rem 0;
+    text-shadow: 1.2px 1.2px 1.5px rgba(0,0,0,0.08);
+    letter-spacing: 0.01em;
+    display: block;
+    text-align: center;
+  }
+  .acf-hero-date {
+    font-size: 0.55rem;
+    margin-bottom: 0.08rem;
+    font-weight: 600;
+  }
+  .acf-hero-buttons {
+    flex-direction: column;
+    gap: 0.08rem;
+    margin-bottom: 0.02rem;
+  }
+  .acf-hero-btn {
+    font-size: 0.6rem;
+    padding: 0.13rem 0.3rem;
+    width: 96vw;
+    max-width: 110px;
+    margin: 0 auto 0.04rem auto;
+    display: block;
   }
 }
+/* Ensure menu item text is always visible and white, with extra contrast */
+::ng-deep .mat-mdc-menu-item .mat-mdc-menu-item-text,
+::ng-deep .mat-mdc-menu-item-text,
+::ng-deep .mat-menu-item .mat-menu-item-text,
+::ng-deep .mat-menu-item-text {
+  color: #fff !important;
+  text-shadow: 0 1px 2px #09381a, 0 0 2px #09381a;
+  font-weight: 700;
+  opacity: 1 !important;
+  z-index: 2;
+}
+
+/* Ensure icons in menu items are also visible */
+::ng-deep .mat-mdc-menu-item .mat-icon,
+::ng-deep .mat-menu-item .mat-icon {
+  color: #fff !important;
+  filter: drop-shadow(0 1px 2px #09381a);
+}
+/* Aggressive fix: force solid background for all menu overlays and menu items, including MDC and descendants */
+::ng-deep .mat-mdc-menu-panel,
+::ng-deep .mat-mdc-menu-panel *,
+::ng-deep .mat-mdc-menu-item,
+::ng-deep .mat-mdc-menu-item *,
+::ng-deep .mat-menu-panel,
+::ng-deep .mat-menu-panel *,
+::ng-deep .mat-menu-item,
+::ng-deep .mat-menu-item * {
+  background: #095c2e !important;
+  background-color: #095c2e !important;
+  color: #fff !important;
+  opacity: 1 !important;
+  box-shadow: none !important;
+}
+
+::ng-deep .mat-mdc-menu-panel {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.35) !important;
+  border-radius: 10px !important;
+}
+
+::ng-deep .mat-mdc-menu-item.active,
+::ng-deep .mat-mdc-menu-item:hover,
+::ng-deep .mat-menu-item.active,
+::ng-deep .mat-menu-item:hover {
+  background: #0b3a1a !important;
+  background-color: #0b3a1a !important;
+  color: #fff !important;
+}
+/* Defensive: solid card background for all Material menu overlays */
+.mat-menu-panel,
+.mat-mdc-menu-panel,
+.mdc-menu-surface,
+.cdk-overlay-pane .mat-menu-panel,
+.cdk-overlay-pane .mat-mdc-menu-panel,
+.cdk-overlay-pane .mdc-menu-surface {
+  background: #095c2e !important;
+  color: #fff !important;
+  border-radius: 10px !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.35) !important;
+  min-width: 180px !important;
+  z-index: 10000 !important;
+  opacity: 1 !important;
+  /* Defensive: ensure no transparency on overlays or children */
+  background-color: #095c2e !important;
+  backdrop-filter: none !important;
+  filter: none !important;
+}
+
+/* Defensive: overlay container and pane */
+.cdk-overlay-container,
+.cdk-overlay-pane {
+  background: none !important;
+  opacity: 1 !important;
+  box-shadow: none !important;
+}
+
+/* Defensive: all descendants and pseudo-elements of overlays */
+.mat-menu-panel *,
+.mat-mdc-menu-panel *,
+.mdc-menu-surface *,
+.cdk-overlay-pane *,
+.cdk-overlay-container * {
+  background: none !important;
+  background-color: inherit !important;
+  opacity: 1 !important;
+}
+
+.mat-menu-panel::before, .mat-menu-panel::after,
+.mat-mdc-menu-panel::before, .mat-mdc-menu-panel::after,
+.mdc-menu-surface::before, .mdc-menu-surface::after,
+.cdk-overlay-pane::before, .cdk-overlay-pane::after {
+  background: #095c2e !important;
+  opacity: 1 !important;
+}
+
+/* Remove any transparent backgrounds from overlays */
+.mat-menu-panel[style*="background: transparent"],
+.mat-mdc-menu-panel[style*="background: transparent"],
+.mdc-menu-surface[style*="background: transparent"],
+.cdk-overlay-pane[style*="background: transparent"] {
+  background: #095c2e !important;
+  opacity: 1 !important;
+}
+.mat-menu-panel .mat-menu-item,
+.mat-mdc-menu-panel .mat-menu-item,
+.mdc-menu-surface .mat-menu-item {
+  color: #fff !important;
+  font-weight: 600;
+  font-size: 1.08rem;
+  padding: 0.7rem 1.2rem;
+  background: #095c2e !important;
+  background-color: #095c2e !important;
+  opacity: 1 !important;
+  box-shadow: none !important;
+}
+.mat-menu-panel .mat-menu-item,
+.mat-mdc-menu-panel .mat-menu-item,
+.mdc-menu-surface .mat-menu-item {
+  color: #fff !important;
+  font-weight: 600;
+  font-size: 1.08rem;
+  padding: 0.7rem 1.2rem;
+}
+.mat-menu-panel .mat-menu-item:hover,
+.mat-mdc-menu-panel .mat-menu-item:hover,
+.mdc-menu-surface .mat-menu-item:hover {
+  background: #0b3a1a !important;
+  background-color: #0b3a1a !important;
+  opacity: 1 !important;
+}
+/* Solid card-like background for Material submenus */
+.mat-menu-panel {
+  background: #095c2e !important; /* solid green */
+  color: #fff !important;
+  border-radius: 10px !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.35) !important;
+  min-width: 180px !important;
+  z-index: 10000 !important;
+  background-color: #095c2e !important;
+  opacity: 1 !important;
+}
+.mat-menu-panel .mat-menu-item {
+  color: #fff !important;
+  font-weight: 600;
+  font-size: 1.08rem;
+  padding: 0.7rem 1.2rem;
+}
+.mat-menu-panel .mat-menu-item:hover {
+  background: #0b3a1a !important;
+}
+.nav-bar {
+  background: #095c2e; /* deeper green */
+  color: #e6f0df;
+  padding: 0.7rem 0 0.7rem 0;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  border-bottom: 2px solid #0b3a1a;
+  width: 100%;
+  z-index: 100;
+}
+.desktop-nav {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+.nav-link {
+  color: #e6f0df;
+  font-weight: 600;
+  padding: 0.5rem 1.2rem;
+  border-radius: 4px;
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+  background: transparent;
+  transition: background 0.2s;
+}
+.nav-link:hover {
+  background: #0b3a1a;
+}
+.nav-link.active {
+  background: #0b3a1a;
+  font-weight: 800;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+/* Always hide hamburger by default */
+.menu-button {
+  display: none;
+  position: relative;
+  z-index: 2000;
+  pointer-events: auto;
+}
+
+@media (max-width: 900px) {
+  .menu-button {
+    display: inline-flex !important;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    position: fixed !important;
+    top: 16px;
+    right: 16px;
+    left: auto;
+    z-index: 9999 !important;
+    pointer-events: auto;
+    background: #2a220e;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  .nav-bar {
+    display: none !important;
+  }
+  .desktop-nav {
+    display: none;
+  }
+  .mobile-sidenav {
+    display: block !important;
+  }
+  .celtic-header {
+    position: relative;
+  }
+}
+.celtic-header {
+  background: linear-gradient(180deg, #d6d1c2 0%, #bdb7a6 100%);
+  color: #2a220e;
+  padding: 2.5rem 0 0.5rem 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+  border-radius: 0;
+  overflow: visible;
+}
+
+.acf-hero-title {
+  font-family: 'Calistoga', serif;
+  font-size: 5rem;
+  font-weight: 900;
+  text-align: center;
+  color: #2a220e;
+  letter-spacing: 0.04em;
+  margin: 0 0 0.2rem 0;
+  line-height: 1.05;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.18), 0 1px 2px rgba(0,0,0,0.10);
+}
+.acf-hero-celtic {
+  color: #2b7a2b;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.08);
+@media (max-width: 900px) {
+  .acf-hero-title {
+    font-size: 2rem;
+    line-height: 1.08;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.13), 0 1px 2px rgba(0,0,0,0.08);
+    margin-bottom: 0.2rem;
+  }
+  .acf-hero-celtic {
+    font-size: 2rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.10), 0 1px 2px rgba(0,0,0,0.06);
+  }
+  .acf-hero-date {
+    font-size: 1.1rem;
+    margin-bottom: 0.7rem;
+  }
+  .acf-hero-buttons {
+    flex-direction: column;
+    gap: 0.7rem;
+    margin-bottom: 0.3rem;
+  }
+  .acf-hero-btn {
+    font-size: 1rem;
+    padding: 0.5rem 0.7rem;
+    width: 92vw;
+    max-width: 260px;
+    margin: 0 auto 0.3rem auto;
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  .acf-hero-title {
+    font-size: 1.1rem;
+    line-height: 1.08;
+    text-shadow: 1px 1px 1.5px rgba(0,0,0,0.10);
+    margin-bottom: 0.1rem;
+  }
+  .acf-hero-celtic {
+    font-size: 1.1rem;
+    text-shadow: 1px 1px 1.5px rgba(0,0,0,0.08);
+  }
+  .acf-hero-date {
+    font-size: 0.8rem;
+    margin-bottom: 0.4rem;
+  }
+  .acf-hero-buttons {
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 0.2rem;
+  }
+  .acf-hero-btn {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.5rem;
+    width: 96vw;
+    max-width: 200px;
+    margin: 0 auto 0.2rem auto;
+    display: block;
+  }
+}
+}
+.acf-hero-date {
+  font-family: 'Calistoga', serif;
+  font-size: 1rem;
+  color: #2a220e;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.18);
+}
+.acf-hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 0;
+}
+.acf-hero-btn {
+  background: #2b4e1e;
+  color: #fff;
+  font-family: 'Inter', 'Calistoga', serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.7rem 2.5rem;
+  border-radius: 2px;
+  text-decoration: none;
+  letter-spacing: 0.12em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  border: none;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+  text-align: center;
+  margin: 0 0.5rem;
+  display: inline-block;
+}
+.acf-hero-btn:hover {
+  background: #095c2e;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.28);
+}
+
