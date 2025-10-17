@@ -137,36 +137,27 @@
 
 /* Hamburger and close button styling */
 .menu-button,
-.close-button {
-  position: fixed;
-  top: 18px;
-  right: 18px;
-  background: #2a220e;
-  color: #fff;
-  border: none;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
-  cursor: pointer;
-  width: 48px;
-  height: 48px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 1;
-  visibility: visible;
-  font-size: 2rem;
-}
+  .close-button {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    background: #2a220e;
+    color: #fff;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    visibility: visible;
+    font-size: 2rem;
+  }
 
-.close-button {
-  right: 18px;
-  top: 18px;
-  background: #2a220e;
-  color: #fff;
-  border: none;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
-  border-radius: 8px;
-  font-size: 2rem;
-}
+
 
 /* Mobile sidenav container production styles */
 .mobile-sidenav {
