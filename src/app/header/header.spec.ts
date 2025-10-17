@@ -63,7 +63,9 @@ describe('HeaderComponent', () => {
       // Hamburger button should not be visible
       const button = compiled.querySelector('.menu-button');
       expect(button).toBeTruthy();
-      expect(window.getComputedStyle(button).display).toBe('none');
+      if (button) {
+        expect(window.getComputedStyle(button).display).toBe('none');
+      }
       // Sidenav should not be open
       const component = fixture.componentInstance;
       const sidenav: MatSidenav = component.sidenav;
