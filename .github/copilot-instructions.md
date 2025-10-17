@@ -95,4 +95,37 @@ This is a modern Angular 20.3 application with SSR (Server-Side Rendering) capab
 - Test files use `.spec.ts` extension
 - Configuration in `tsconfig.spec.json` and `angular.json` test architect
 
-When working with this codebase, always use standalone components, leverage Angular signals for state, and ensure both client and server configurations are updated when adding new providers or routes.
+## Mobile Menu Overlay & Modal Interaction (2025)
+
+### Problem (2025)
+- On mobile, the Buy Now button was visible and clickable through the expanded nav menu, even with Angular Material sidenav and custom overlays.
+- Multiple z-index and overlay strategies failed due to stacking context and Angular CDK overlay limitations.
+
+### Solution
+- **Do NOT use MatSidenav for modal mobile menus if you need to guarantee all interaction is blocked.**
+- Use a **MatDialog-based mobile menu** instead:
+  - Create a standalone dialog component for the mobile menu (e.g., `MobileMenuDialogComponent`).
+  - Open the dialog programmatically from the header (using `MatDialog`).
+  - Pass navigation data via `MAT_DIALOG_DATA` and inject it in the dialog component.
+  - Style the dialog panel and content to match the desired mobile menu look (dark background, white text, etc.).
+  - Remove all custom z-index hacks and overlays for this use case.
+- This guarantees the overlay is always above all content, including floating/fixed buttons, and blocks all interaction.
+
+### Best Practices
+- **Never include dialog-only components in the `imports` array of the parent unless used in the template.**
+- Always inject `MAT_DIALOG_DATA` for dialog data, not `@Input()`.
+- Restore/maintain theming for dialog panels as needed (e.g., `.mobile-sidenav-content` for dark backgrounds).
+- Remove stray or duplicate closing braces in CSS to avoid build errors.
+
+### Reference Implementation
+- See `header.ts`, `mobile-menu-dialog.ts`, and `header.css` for the correct pattern.
+- Test on real mobile devices to ensure overlays block all interaction.
+
+## Angular 20+ Template Syntax Best Practices
+
+- **Do NOT use deprecated `*ngIf` or `*ngFor` in templates.**
+- Use the new block syntax: `@if (condition) { ... } @else { ... }` and `@for (item of items) { ... }`.
+- This ensures compatibility with Angular v20+ and avoids deprecation warnings.
+- See `header.html` for a reference implementation.
+
+---
