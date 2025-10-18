@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MobileMenuDialogComponent } from './mobile-menu-dialog';
 import { NAV_CONFIG } from './nav-config';
-import { By } from '@angular/platform-browser';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { provideZonelessChangeDetection } from '@angular/core';
 
