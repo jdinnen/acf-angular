@@ -3,6 +3,7 @@ import { MobileMenuDialogComponent } from './mobile-menu-dialog';
 import { NAV_CONFIG } from './nav-config';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { provideZonelessChangeDetection } from '@angular/core';
+import { provideRouter } from '@angular/router';
 
 describe('MobileMenuDialogComponent', () => {
   let fixture: ComponentFixture<MobileMenuDialogComponent>;
@@ -14,8 +15,7 @@ describe('MobileMenuDialogComponent', () => {
       providers: [
         { provide: MAT_DIALOG_DATA, useValue: { nav: NAV_CONFIG } },
         provideZonelessChangeDetection(),
-        // Provide router for RouterLink/ActivatedRoute
-        require('@angular/router').provideRouter([])
+  provideRouter([])
       ]
     }).compileComponents();
     fixture = TestBed.createComponent(MobileMenuDialogComponent);
