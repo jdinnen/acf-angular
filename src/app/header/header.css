@@ -1,3 +1,44 @@
+/* --- Angular Material Menu Overlay Polished Desktop Styles --- */
+@media (min-width: 901px) {
+  ::ng-deep .mat-mdc-menu-panel,
+  ::ng-deep .cdk-overlay-pane {
+    background: #095c2e !important;
+    color: #fff !important;
+    border-radius: 10px !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35) !important;
+    min-width: 180px !important;
+    z-index: 2147483647 !important;
+  }
+  ::ng-deep .mat-mdc-menu-item {
+    color: #fff !important;
+    font-weight: 700 !important;
+    font-size: 1.08rem !important;
+    opacity: 1 !important;
+    background: transparent !important;
+    border-radius: 4px !important;
+    transition: background 0.18s, color 0.18s;
+    padding: 0.7rem 1.2rem !important;
+  }
+  ::ng-deep .mat-mdc-menu-item-text {
+    color: #fff !important;
+    font-weight: 700 !important;
+    opacity: 1 !important;
+    background: transparent !important;
+    border: none !important;
+    text-shadow: 0 1px 2px #09381a, 0 0 2px #09381a !important;
+    font-size: 1.08rem !important;
+  }
+  ::ng-deep .mat-mdc-menu-item:hover,
+  ::ng-deep .mat-mdc-menu-item.cdk-focused,
+  ::ng-deep .mat-mdc-menu-item.cdk-program-focused {
+    background: #0b3a1a !important;
+    color: #fff !important;
+  }
+  ::ng-deep .mat-mdc-menu-item-text:focus {
+    outline: 2px solid #ffb300 !important;
+    outline-offset: 2px;
+  }
+}
 /* Custom overlay for mobile sidenav to block all interaction */
 .custom-mobile-overlay {
   position: fixed;
@@ -322,165 +363,6 @@
   }
 }
 
-/* Ensure menu item text is always visible and white, with extra contrast */
-::ng-deep .mat-mdc-menu-item .mat-mdc-menu-item-text,
-::ng-deep .mat-mdc-menu-item-text,
-::ng-deep .mat-menu-item .mat-menu-item-text,
-::ng-deep .mat-menu-item-text {
-  color: #fff !important;
-  text-shadow: 0 1px 2px #09381a, 0 0 2px #09381a;
-  font-weight: 700;
-  opacity: 1 !important;
-}
-
-/* Ensure icons in menu items are also visible */
-::ng-deep .mat-mdc-menu-item .mat-icon,
-::ng-deep .mat-menu-item .mat-icon {
-  color: #fff !important;
-  filter: drop-shadow(0 1px 2px #09381a);
-}
-
-/* Aggressive fix: force solid background for all menu overlays and menu items, including MDC and descendants */
-::ng-deep .mat-mdc-menu-panel,
-::ng-deep .mat-mdc-menu-panel *,
-::ng-deep .mat-mdc-menu-item,
-::ng-deep .mat-mdc-menu-item *,
-::ng-deep .mat-menu-panel,
-::ng-deep .mat-menu-panel *,
-::ng-deep .mat-menu-item,
-::ng-deep .mat-menu-item * {
-  background: #095c2e !important;
-  background-color: #095c2e !important;
-  color: #fff !important;
-  opacity: 1 !important;
-  box-shadow: none !important;
-}
-
-::ng-deep .mat-mdc-menu-panel {
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35) !important;
-  border-radius: 10px !important;
-}
-
-::ng-deep .mat-mdc-menu-item.active,
-::ng-deep .mat-mdc-menu-item:hover,
-::ng-deep .mat-menu-item.active,
-::ng-deep .mat-menu-item:hover {
-  background: #0b3a1a !important;
-  background-color: #0b3a1a !important;
-  color: #fff !important;
-}
-
-/* Defensive: solid card background for all Material menu overlays */
-.mat-menu-panel,
-.mat-mdc-menu-panel,
-.mdc-menu-surface,
-.cdk-overlay-pane .mat-menu-panel,
-.cdk-overlay-pane .mat-mdc-menu-panel,
-.cdk-overlay-pane .mdc-menu-surface {
-  background: #095c2e !important;
-  color: #fff !important;
-  border-radius: 10px !important;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35) !important;
-  min-width: 180px !important;
-  opacity: 1 !important;
-  /* Defensive: ensure no transparency on overlays or children */
-  background-color: #095c2e !important;
-  backdrop-filter: none !important;
-  filter: none !important;
-}
-
-/* Defensive: overlay container and pane */
-.cdk-overlay-container,
-.cdk-overlay-pane {
-  background: none !important;
-  opacity: 1 !important;
-  box-shadow: none !important;
-}
-
-/* Defensive: all descendants and pseudo-elements of overlays */
-.mat-menu-panel *,
-.mat-mdc-menu-panel *,
-.mdc-menu-surface *,
-.cdk-overlay-pane *,
-.cdk-overlay-container * {
-  background: none !important;
-  background-color: inherit !important;
-  opacity: 1 !important;
-}
-
-.mat-menu-panel::before,
-.mat-menu-panel::after,
-.mat-mdc-menu-panel::before,
-.mat-mdc-menu-panel::after,
-.mdc-menu-surface::before,
-.mdc-menu-surface::after,
-.cdk-overlay-pane::before,
-.cdk-overlay-pane::after {
-  background: #095c2e !important;
-  opacity: 1 !important;
-}
-
-/* Remove any transparent backgrounds from overlays */
-.mat-menu-panel[style*="background: transparent"],
-.mat-mdc-menu-panel[style*="background: transparent"],
-.mdc-menu-surface[style*="background: transparent"],
-.cdk-overlay-pane[style*="background: transparent"] {
-  background: #095c2e !important;
-  opacity: 1 !important;
-}
-
-.mat-menu-panel .mat-menu-item,
-.mat-mdc-menu-panel .mat-menu-item,
-.mdc-menu-surface .mat-menu-item {
-  color: #fff !important;
-  font-weight: 600;
-  font-size: 1.08rem;
-  padding: 0.7rem 1.2rem;
-  background: #095c2e !important;
-  background-color: #095c2e !important;
-  opacity: 1 !important;
-  box-shadow: none !important;
-}
-
-.mat-menu-panel .mat-menu-item,
-.mat-mdc-menu-panel .mat-menu-item,
-.mdc-menu-surface .mat-menu-item {
-  color: #fff !important;
-  font-weight: 600;
-  font-size: 1.08rem;
-  padding: 0.7rem 1.2rem;
-}
-
-.mat-menu-panel .mat-menu-item:hover,
-.mat-mdc-menu-panel .mat-menu-item:hover,
-.mdc-menu-surface .mat-menu-item:hover {
-  background: #0b3a1a !important;
-  background-color: #0b3a1a !important;
-  opacity: 1 !important;
-}
-
-/* Solid card-like background for Material submenus */
-.mat-menu-panel {
-  background: #095c2e !important;
-  /* solid green */
-  color: #fff !important;
-  border-radius: 10px !important;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35) !important;
-  min-width: 180px !important;
-  background-color: #095c2e !important;
-  opacity: 1 !important;
-}
-
-.mat-menu-panel .mat-menu-item {
-  color: #fff !important;
-  font-weight: 600;
-  font-size: 1.08rem;
-  padding: 0.7rem 1.2rem;
-}
-
-.mat-menu-panel .mat-menu-item:hover {
-  background: #0b3a1a !important;
-}
 
 .nav-bar {
   background: #095c2e;
