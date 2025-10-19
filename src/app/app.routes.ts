@@ -3,7 +3,6 @@ import { Home } from './home/home';
 import { TicketsComponent } from './tickets/tickets';
 import { PerformersPage } from './performers/performers';
 import { WorkshopsPage } from './workshops/workshops';
-import { SchedulesPage } from './schedules/schedules';
 import { Animals } from './animals/animals';
 import { HighlandGamesPage } from './highland-games/highland-games';
 import { Venue } from './venue/venue';
@@ -11,13 +10,18 @@ import { Vendors } from './vendors/vendors';
 import { VolunteerPage } from './volunteer/volunteer';
 import { FaqComponent } from './faq/faq';
 import { HostHotel } from './host-hotel/host-hotel';
+import { Schedules } from './schedules/schedules';
 
 export const routes: Routes = [
 	{ path: '', component: Home },
 	{ path: 'tickets', component: TicketsComponent },
 	{ path: 'performers', component: PerformersPage },
 	{ path: 'workshops', component: WorkshopsPage },
-	{ path: 'schedules', component: SchedulesPage },
+	{
+		path: 'schedules',
+		component: Schedules,
+		title: 'Festival Schedule',
+	},
 	{ path: 'animals', component: Animals },
 	{ path: 'highland-games', component: HighlandGamesPage },
 	{ path: 'venue', component: Venue },

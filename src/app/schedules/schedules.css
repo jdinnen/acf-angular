@@ -1,0 +1,149 @@
+.schedules-main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5rem 0.5rem;
+  background: #ede6d6;
+  box-sizing: border-box;
+}
+.schedules-intro-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(30, 42, 68, 0.10);
+  padding: 2rem 1.5rem;
+  max-width: 700px;
+  margin-bottom: 2rem;
+  font-family: 'Inter', 'Calistoga', serif;
+  font-size: 1.08rem;
+  color: #09381a;
+}
+.schedules-intro-title {
+  font-family: 'Calistoga', serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #095c2e;
+  margin-bottom: 0.7rem;
+  text-align: center;
+}
+.schedules-intro-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  font-size: 1.08rem;
+  color: #09381a;
+}
+.schedules-card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.2rem;
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.schedules-day-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(30, 42, 68, 0.10);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Inter', 'Calistoga', serif;
+  font-size: 1.08rem;
+  color: #09381a;
+}
+.schedules-day-title {
+  font-family: 'Calistoga', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #095c2e;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+.schedules-pdf-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-weight: 700;
+  font-size: 1.08rem;
+  border-radius: 6px;
+  background: var(--md-sys-color-primary, #095c2e);
+  color: #fff;
+  text-transform: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  padding: 0.7rem 1.5rem;
+  margin-top: 1.2rem;
+  text-decoration: none;
+}
+.schedules-pdf-img-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.2rem;
+  text-decoration: none;
+  width: 100%;
+  min-height: 48px;
+}
+.schedules-pdf-icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.18s, box-shadow 0.18s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+.schedules-pdf-img-link:hover .schedules-pdf-icon,
+.schedules-pdf-img-link:focus .schedules-pdf-icon {
+  transform: scale(1.08);
+  box-shadow: 0 4px 16px rgba(30, 42, 68, 0.18);
+}
+@media (max-width: 700px) {
+  .schedules-main {
+    padding: 1.2rem 0.7rem;
+  }
+  .schedules-intro-card {
+    padding: 1.2rem 0.7rem;
+    border-radius: 10px;
+    font-size: 0.98rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    box-sizing: border-box;
+  }
+  .schedules-card-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .schedules-day-card {
+    padding: 1.2rem 0.7rem;
+    border-radius: 10px;
+    font-size: 0.98rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    box-sizing: border-box;
+    max-width: 98vw;
+    align-items: stretch;
+  }
+  .schedules-day-title {
+    font-size: 1.05rem;
+    margin-bottom: 0.7rem;
+  }
+  .schedules-pdf-btn {
+    font-size: 0.98rem;
+    margin-top: 0.7rem;
+    border-radius: 5px;
+    padding: 0.7rem 1rem;
+    justify-content: center;
+  }
+  .schedules-pdf-img-link {
+    margin-top: 0.7rem;
+    min-height: 48px;
+  }
+  .schedules-pdf-icon {
+    width: 48px;
+    height: 48px;
+  }
+}

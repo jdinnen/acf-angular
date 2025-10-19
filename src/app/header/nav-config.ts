@@ -28,5 +28,6 @@ export const NAV_CONFIG: NavItem[] = [
         path: '/faqs'
     },
     { label: 'Venue', path: '/venue' },
-    { label: 'Animals', path: '/animals' }
+    { label: 'Animals', path: '/animals' },
+    { label: 'Schedule', path: '/schedules' }
 ];
