@@ -1,0 +1,133 @@
+/* Volunteer Page Styles - Material Design, single column, accessible */
+.volunteer-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.2rem;
+  padding: 2.2rem 1.2rem 2.2rem 1.2rem;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.volunteer-info-card {
+  background: #e6f0df;
+  color: #09381a;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  padding: 2rem 1.5rem;
+  font-family: 'Inter', 'Calistoga', serif;
+  font-size: 1.08rem;
+  margin-bottom: 1.2rem;
+}
+.volunteer-title {
+  font-family: 'Calistoga', serif;
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin-bottom: 1.1rem;
+  color: #095c2e;
+  text-align: center;
+}
+.volunteer-info-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  font-size: 1.08rem;
+  color: #09381a;
+}
+.volunteer-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  width: 100%;
+}
+.volunteer-card {
+  background: #f7f5ee;
+  color: #09381a;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  padding: 1.2rem 1.2rem 1.5rem 1.2rem;
+  font-family: 'Inter', 'Calistoga', serif;
+  font-size: 1.08rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.7rem;
+}
+.volunteer-card-title {
+  font-family: 'Calistoga', serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #095c2e;
+  margin-bottom: 0.2rem;
+}
+.volunteer-card-desc {
+  font-size: 1.08rem;
+  color: #09381a;
+  margin-bottom: 0.5rem;
+}
+.volunteer-signup-img {
+  border-radius: 4px;
+  width: auto;
+  height: 36px;
+  max-width: 140px;
+  display: block;
+  margin: 0.4rem auto 0.1rem auto;
+  object-fit: contain;
+}
+
+@media (max-width: 700px) {
+  .volunteer-main {
+    padding: 0.5rem 0 0.5rem 0;
+    max-width: 100vw;
+    gap: 1.2rem;
+  }
+  .volunteer-info-card {
+    padding: 0.9rem 0.9rem;
+    border-radius: 7px;
+    font-size: 0.98rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    box-sizing: border-box;
+  }
+  .volunteer-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+  .volunteer-info-list {
+    font-size: 0.98rem;
+    padding-left: 0.7rem;
+  }
+  .volunteer-cards {
+    gap: 0.7rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .volunteer-card {
+    padding: 0.7rem 0.9rem 1rem 0.9rem;
+    border-radius: 7px;
+    font-size: 0.98rem;
+    gap: 0.3rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    box-sizing: border-box;
+    max-width: 98vw;
+    align-items: stretch;
+  }
+  .volunteer-card-title {
+    font-size: 1.05rem;
+    margin-bottom: 0.1rem;
+  }
+  .volunteer-card-desc {
+    font-size: 0.98rem;
+    margin-bottom: 0.4rem;
+  }
+  .volunteer-signup-img {
+    width: auto;
+    height: 48px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3px;
+    object-fit: contain;
+  }
+}
