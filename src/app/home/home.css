@@ -103,11 +103,6 @@
   transition: box-shadow 0.2s, border-color 0.2s;
 }
 
-.acf-card:hover {
-  box-shadow: 0 16px 48px rgba(30, 42, 68, 0.38);
-  border-color: #1e2a44;
-}
-
 .acf-card-image {
   width: 100%;
   max-width: 100%;
