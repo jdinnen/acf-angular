@@ -22,6 +22,7 @@ export const NAV_CONFIG: NavItem[] = [
             { label: 'Vendors', path: '/vendors' }
         ]
     },
+    { label: 'Host Hotel', path: '/host-hotel' },
     {
         label: 'FAQs',
         path: '/faqs'

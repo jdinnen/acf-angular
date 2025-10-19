@@ -10,6 +10,7 @@ import { VenuePage } from './venue/venue';
 import { Vendors } from './vendors/vendors';
 import { VolunteerPage } from './volunteer/volunteer';
 import { FaqComponent } from './faq/faq';
+import { HostHotel } from './host-hotel/host-hotel';
 
 export const routes: Routes = [
 	{ path: '', component: Home },
@@ -22,5 +23,6 @@ export const routes: Routes = [
 	{ path: 'venue', component: VenuePage },
 	{ path: 'vendors', component: Vendors },
 	{ path: 'volunteer', component: VolunteerPage },
-	{ path: 'faqs', component: FaqComponent }
+	{ path: 'faqs', component: FaqComponent },
+	{ path: 'host-hotel', component: HostHotel }
 ];
