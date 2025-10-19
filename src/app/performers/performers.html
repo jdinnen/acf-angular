@@ -1,0 +1,12 @@
+<div class="performers-main">
+  <h2 class="performers-title">2025 Austin Celtic Festival Performers</h2>
+  <div class="acf-card-grid">
+    @for (performer of performers(); track $index) {
+      <div class="acf-card">
+        <img class="acf-card-image" [src]="performer.image" [alt]="performer.name" />
+        <h3 class="acf-card-title">{{ performer.name }}</h3>
+        <div class="acf-card-content">{{ performer.description }}</div>
+      </div>
+    }
+  </div>
+</div>

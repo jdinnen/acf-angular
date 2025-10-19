@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { Home } from './home/home';
 import { TicketsComponent } from './tickets/tickets';
-import { PerformersPage } from './performers/performers';
+import { Performers } from './performers/performers';
 import { WorkshopsPage } from './workshops/workshops';
 import { Animals } from './animals/animals';
 import { HighlandGamesPage } from './highland-games/highland-games';
@@ -15,7 +15,7 @@ import { Schedules } from './schedules/schedules';
 export const routes: Routes = [
 	{ path: '', component: Home },
 	{ path: 'tickets', component: TicketsComponent },
-	{ path: 'performers', component: PerformersPage },
+	{ path: 'performers', component: Performers },
 	{ path: 'workshops', component: WorkshopsPage },
 	{
 		path: 'schedules',
