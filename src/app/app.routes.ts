@@ -4,7 +4,7 @@ import { TicketsComponent } from './tickets/tickets';
 import { PerformersPage } from './performers/performers';
 import { WorkshopsPage } from './workshops/workshops';
 import { SchedulesPage } from './schedules/schedules';
-import { AnimalsPage } from './animals/animals';
+import { Animals } from './animals/animals';
 import { HighlandGamesPage } from './highland-games/highland-games';
 import { Venue } from './venue/venue';
 import { Vendors } from './vendors/vendors';
@@ -18,7 +18,7 @@ export const routes: Routes = [
 	{ path: 'performers', component: PerformersPage },
 	{ path: 'workshops', component: WorkshopsPage },
 	{ path: 'schedules', component: SchedulesPage },
-	{ path: 'animals', component: AnimalsPage },
+	{ path: 'animals', component: Animals },
 	{ path: 'highland-games', component: HighlandGamesPage },
 	{ path: 'venue', component: Venue },
 	{ path: 'vendors', component: Vendors },

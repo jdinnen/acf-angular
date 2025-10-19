@@ -1,0 +1,14 @@
+<section class="acf-hero">
+  <img [src]="heroImg" alt="Celtic Animals Hero" class="acf-main-image" />
+</section>
+<div class="animals-main">
+  <div class="animals-card-grid">
+    @for (card of cards; track $index) {
+      <div class="animals-card">
+        <img class="animals-card-image" [src]="card.img" [alt]="card.title" />
+        <div class="animals-card-title">{{ card.title }}</div>
+        <div class="animals-card-content">{{ card.desc }}</div>
+      </div>
+    }
+  </div>
+</div>
