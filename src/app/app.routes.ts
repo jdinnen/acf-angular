@@ -6,7 +6,7 @@ import { WorkshopsPage } from './workshops/workshops';
 import { SchedulesPage } from './schedules/schedules';
 import { AnimalsPage } from './animals/animals';
 import { HighlandGamesPage } from './highland-games/highland-games';
-import { VenuePage } from './venue/venue';
+import { Venue } from './venue/venue';
 import { Vendors } from './vendors/vendors';
 import { VolunteerPage } from './volunteer/volunteer';
 import { FaqComponent } from './faq/faq';
@@ -20,7 +20,7 @@ export const routes: Routes = [
 	{ path: 'schedules', component: SchedulesPage },
 	{ path: 'animals', component: AnimalsPage },
 	{ path: 'highland-games', component: HighlandGamesPage },
-	{ path: 'venue', component: VenuePage },
+	{ path: 'venue', component: Venue },
 	{ path: 'vendors', component: Vendors },
 	{ path: 'volunteer', component: VolunteerPage },
 	{ path: 'faqs', component: FaqComponent },

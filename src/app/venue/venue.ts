@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
 @Component({
-  selector: 'app-venue',
+  selector: 'acf-venue',
   standalone: true,
-  imports: [],
-  template: `
-    <main>
-      <h1 style="text-align:center;font-family:'Calistoga',serif;">Venue</h1>
-    </main>
-  `
+  imports: [CommonModule],
+  templateUrl: './venue.html',
+  styleUrls: ['./venue.css']
 })
-export class VenuePage {}
+export class Venue {
+  readonly address = '10621 Pioneer Farms Dr, Austin, TX 78754';
+}
