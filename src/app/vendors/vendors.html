@@ -1,0 +1,47 @@
+<section class="acf-hero">
+    <img src="/images/vendors/vendors.jpg" alt="Austin Celtic Festival Vendors" class="acf-main-image" />
+</section>
+<div class="vendors-main">
+    <div class="vendors-card">
+        <div class="vendors-card-img-col">
+            <img [src]="foodVendor.image" alt="Festival Food Vendors" class="vendors-card-img" />
+        </div>
+        <div class="vendors-card-info-col">
+            <h2 class="vendors-card-title">{{ foodVendor.title }}</h2>
+            <div class="vendors-card-desc">
+                <span class="sold-out">We are <u>sold out</u> of Food Vendor space for 2025.<br>
+                    Watch for 2026 applications opening in May of 2026.<br></span><br>
+                The Austin Celtic Festival is proud to host some of the region's top Celtic food vendors. If you would
+                like to apply for one of the available food truck spaces, please fill out the application and send it to
+                our Vendor Director.
+            </div>
+            <div class="vendors-card-btn-row">
+                <a mat-button color="primary" class="vendors-card-btn" [href]="foodVendor.button.link" target="_blank"
+                    rel="noopener">
+                    {{ foodVendor.button.label }}
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="vendors-card">
+        <div class="vendors-card-img-col">
+            <img [src]="merchVendor.image" alt="Celtic Merchandise Vendors" class="vendors-card-img" />
+        </div>
+        <div class="vendors-card-info-col">
+            <h2 class="vendors-card-title">{{ merchVendor.title }}</h2>
+            <div class="vendors-card-desc">
+                <span class="sold-out">We are <u>sold out</u> of Merchandise Vendor space for 2025.<br>
+                    Watch for 2026 applications opening in May of 2026.<br></span><br>
+                The Austin Celtic Festival is proud to host some of the region's top Celtic craft vendors. If you would
+                like to apply for one of the available merchandise booths, please fill out the new online form
+                application and submit.
+            </div>
+            <div class="vendors-card-btn-row">
+                <a mat-button color="primary" class="vendors-card-btn" [href]="merchVendor.button.link" target="_blank"
+                    rel="noopener">
+                    {{ merchVendor.button.label }}
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
