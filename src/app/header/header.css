@@ -280,21 +280,16 @@
     gap: 0;
   }
 
-  .acf-hero-main {
-    font-size: 2.2rem;
-    line-height: 1.02;
-    margin: 0;
-    text-shadow: 1.5px 1.5px 2px rgba(0, 0, 0, 0.13);
-  }
-
+  .acf-hero-main,
   .acf-hero-celtic {
-    font-size: 2.7rem;
+    font-size: 2.2rem;
     font-weight: 900;
     margin: 0.09rem 0 0.09rem 0;
-    text-shadow: 1.5px 1.5px 2px rgba(0, 0, 0, 0.10);
+    text-shadow: 1.5px 1.5px 2px rgba(0, 0, 0, 0.13);
     letter-spacing: 0.01em;
     display: block;
     text-align: center;
+    line-height: 1.02;
   }
 
   .acf-hero-date {
@@ -354,12 +349,15 @@
   }
 
   .acf-hero-btn {
-    font-size: 0.6rem;
-    padding: 0.13rem 0.3rem;
-    width: 96vw;
-    max-width: 110px;
-    margin: 0 auto 0.04rem auto;
+    font-size: 1rem;
+    padding: 0.5rem 1.2rem;
+    min-width: 96px;
+    max-width: 220px;
+    width: auto;
+    margin: 0.18rem auto 0.18rem auto;
     display: block;
+    border-radius: 8px;
+    box-sizing: border-box;
   }
 }
 
@@ -424,7 +422,7 @@
 
 @media (max-width: 900px) {
   .menu-button {
-    display: inline-flex !important;
+    display: flex !important;
     color: #fff;
     align-items: center;
     justify-content: center;
@@ -436,11 +434,16 @@
     background: #2a220e;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
     cursor: pointer;
+    min-width: 48px;
+    min-height: 48px;
     width: 48px;
     height: 48px;
+    padding: 0;
     border-radius: 8px;
     opacity: 1 !important;
     visibility: visible !important;
+    box-sizing: border-box;
+    font-size: 2rem;
   }
 
   .nav-bar {
@@ -517,26 +520,36 @@
     }
 
     .acf-hero-btn {
-      font-size: 1rem;
-      padding: 0.5rem 0.7rem;
-      width: 92vw;
-      max-width: 260px;
-      margin: 0 auto 0.3rem auto;
+      font-size: 0.95rem;
+      padding: 0.5rem 1rem;
+      min-width: 88px;
+      max-width: 180px;
+      width: auto;
+      margin: 0.14rem auto 0.14rem auto;
       display: block;
+      border-radius: 8px;
+      box-sizing: border-box;
     }
   }
 
   @media (max-width: 600px) {
     .acf-hero-title {
-      font-size: 1.1rem;
+      font-size: 1.5rem;
       line-height: 1.08;
       text-shadow: 1px 1px 1.5px rgba(0, 0, 0, 0.10);
       margin-bottom: 0.1rem;
     }
 
+    .acf-hero-main,
     .acf-hero-celtic {
-      font-size: 1.1rem;
+      font-size: 1.5rem;
+      font-weight: 900;
       text-shadow: 1px 1px 1.5px rgba(0, 0, 0, 0.08);
+      margin: 0.06rem 0 0.06rem 0;
+      letter-spacing: 0.01em;
+      display: block;
+      text-align: center;
+      line-height: 1.01;
     }
 
     .acf-hero-date {

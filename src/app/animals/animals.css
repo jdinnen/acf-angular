@@ -1,18 +1,5 @@
-.acf-hero {
-  width: 100%;
-  background: var(--celtic-cream, #f7f5ee);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem 0 1rem 0;
-  box-sizing: border-box;
-}
-.acf-main-image {
-  max-width: 900px;
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 4px 24px rgba(30, 42, 68, 0.08);
-}
+@import '../acf-hero.css';
+
 .animals-main {
   width: 100%;
   display: flex;

@@ -1,3 +1,5 @@
+@import '../acf-hero.css';
+
 .venue-main {
     width: 100%;
     display: flex;
@@ -69,24 +71,6 @@
     color: #888;
     text-align: center;
     margin-top: 1.2rem;
-}
-
-/* Use home page hero styles for venue hero, swap background colors */
-.acf-hero {
-    width: 100%;
-    background: var(--celtic-cream, #f7f5ee);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem 1rem 1rem 1rem;
-    box-sizing: border-box;
-}
-
-.acf-main-image {
-    max-width: 900px;
-    width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 4px 24px rgba(30, 42, 68, 0.08);
 }
 
 @media (max-width: 900px) {
