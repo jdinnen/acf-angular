@@ -29,5 +29,5 @@ export const NAV_CONFIG: NavItem[] = [
     },
     { label: 'Venue', path: '/venue' },
     { label: 'Animals', path: '/animals' },
-    { label: 'Schedule', path: '/schedules' }
+    { label: 'Highland Games', path: '/highland-games' }
 ];
