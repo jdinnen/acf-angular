@@ -1,0 +1,18 @@
+@import '../acf-hero.css';
+@import '../home/home.css';
+
+.highland-games-main {
+  width: 100%;
+  padding: 2.5rem 1rem;
+  background: #ede6d6;
+  box-sizing: border-box;
+}
+
+.highland-games-title {
+  font-family: 'Calistoga', serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #095c2e;
+  text-align: center;
+  margin-bottom: 2.2rem;
+}

@@ -1,0 +1,15 @@
+<section class="acf-hero">
+  <img src="/images/highland-games/highland-games-hero.jpg" alt="Highland Games Hero" class="acf-main-image" />
+</section>
+<div class="highland-games-main">
+  <h2 class="highland-games-title">Highland Games</h2>
+  <div class="acf-card-grid">
+    @for (card of cards(); track $index) {
+      <div class="acf-card">
+        <img class="acf-card-image" [src]="card.image" [alt]="card.title" />
+        <h3 class="acf-card-title">{{ card.title }}</h3>
+        <div class="acf-card-content">{{ card.description }}</div>
+      </div>
+    }
+  </div>
+</div>
