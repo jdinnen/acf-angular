@@ -4,15 +4,22 @@
 <div class="highland-games-main">
   <h2 class="highland-games-title">Highland Games</h2>
   <div class="highland-games-signup">
-    To Sign Up to Compete Contact:
+    To Sign Up to Compete:
     <a href="https://ironpodium.com/browse/event/austin-highland-games-2025" target="_blank" rel="noopener" class="highland-games-signup-link">Click here!</a>
   </div>
   <div class="acf-card-grid">
     @for (card of cards(); track $index) {
-      <div class="acf-card">
+      <div class="acf-card highland-games-card"
+        (click)="openInfo(card, $event)"
+        tabindex="0"
+        role="button"
+        aria-label="More info about {{card.title}}"
+        (keydown.enter)="openInfo(card, $event)"
+        (keydown.space)="openInfo(card, $event)">
         <img class="acf-card-image" [src]="card.image" [alt]="card.title" />
         <h3 class="acf-card-title">{{ card.title }}</h3>
         <div class="acf-card-content">{{ card.description }}</div>
+        <button class="highland-games-more-btn" type="button" (click)="$event.stopPropagation(); openInfo(card, $event)">More Info</button>
       </div>
     }
   </div>

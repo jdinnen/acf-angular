@@ -1,0 +1,363 @@
+/* DESKTOP (default) */
+.acf-info-dialog-content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: #fff;
+    border-radius: 18px;
+    max-width: 420px;
+    width: 96vw;
+    max-height: 90vh;
+    color: #222;
+    font-family: 'Inter', 'Calistoga', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.acf-info-dialog-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: 56px;
+    min-height: 56px;
+    box-sizing: border-box;
+    padding: 0 0.5rem 0 0.5rem;
+    background: transparent;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    box-shadow: none;
+    z-index: 2;
+    position: relative;
+}
+
+.acf-info-dialog-close-btn {
+    color: #095c2e;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7rem;
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    margin-left: auto;
+    margin-right: 0;
+    padding: 0;
+    cursor: pointer;
+    transition: background 0.2s;
+    position: relative;
+}
+
+.acf-info-dialog-scroll {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    max-height: calc(90vh - 56px);
+    word-break: break-word;
+}
+
+.acf-info-dialog-x {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    z-index: 2;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #095c2e;
+    cursor: pointer;
+    padding: 0.25rem;
+    line-height: 1;
+}
+
+.acf-info-dialog-x:focus {
+    outline: 2px solid #095c2e;
+}
+
+.acf-info-dialog-title {
+    font-family: 'Calistoga', serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #095c2e;
+    margin: 0 0 0.5rem 0;
+    padding: 0 0.5rem;
+    text-align: center;
+    word-break: break-word;
+    line-height: 1.2;
+    flex: 1 1 auto;
+    overflow: visible;
+    white-space: normal;
+}
+
+.acf-info-dialog-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-bottom: 1.2rem;
+    box-shadow: none;
+    background: transparent;
+    object-fit: contain;
+    display: block;
+    box-sizing: border-box;
+}
+
+.acf-info-dialog-body {
+    font-size: 1.08rem;
+    color: #222;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.acf-info-dialog-close {
+    margin-top: 0.5rem;
+    width: 100%;
+    min-height: 40px;
+}
+
+@media (max-width: 600px) {
+    .acf-info-dialog-content {
+        width: 100%;
+        max-width: 100%;
+        height: 100dvh;
+        min-height: 100dvh;
+        border-radius: 0;
+        margin: 0;
+        box-shadow: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y: auto;
+        left: 0;
+    }
+
+    .acf-info-dialog-header {
+        height: 56px;
+        min-height: 56px;
+        padding: 0;
+        box-sizing: border-box;
+        background: #fff;
+        border-top-left-radius: 18px;
+        border-top-right-radius: 18px;
+        z-index: 2;
+        position: sticky;
+        top: 0;
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .acf-info-dialog-close-btn {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        min-height: 40px;
+        font-size: 1.7rem;
+        border-radius: 50%;
+        box-sizing: border-box;
+        position: relative;
+        margin-left: auto;
+        margin-right: 0;
+        z-index: 3;
+        right: 0;
+        top: 0;
+    }
+
+    .acf-info-dialog-title {
+        font-size: 1.1rem;
+        box-sizing: border-box;
+        padding: 0 1rem;
+        margin: 0 0 0.5rem 0;
+        width: 100%;
+        overflow: visible;
+        text-align: center;
+        word-break: break-word;
+        line-height: 1.2;
+        flex: 1 1 auto;
+        white-space: normal;
+    }
+
+    .acf-info-dialog-image {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        box-sizing: border-box;
+        border-top-left-radius: 18px;
+        border-top-right-radius: 18px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        margin-bottom: 1.2rem;
+        box-shadow: none;
+        object-fit: cover;
+        display: block;
+        overflow-x: hidden;
+        background: transparent;
+    }
+
+    .acf-info-dialog-scroll {
+        flex: 1 1 auto;
+        min-height: 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        padding: 1rem;
+        word-break: break-word;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+    .acf-info-dialog-content {
+        width: 100%;
+        max-width: 600px;
+        min-width: 0;
+        height: auto;
+        min-height: 0;
+        border-radius: 18px;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .acf-info-dialog-header {
+        height: 56px;
+        min-height: 56px;
+        padding: 0 0.5rem 0 0.5rem;
+        box-sizing: border-box;
+        background: #fff;
+        border-top-left-radius: 18px;
+        border-top-right-radius: 18px;
+        z-index: 2;
+        position: relative;
+        justify-content: flex-end;
+    }
+
+    .acf-info-dialog-close-btn {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        min-height: 40px;
+        font-size: 1.7rem;
+        border-radius: 50%;
+        box-sizing: border-box;
+        position: relative;
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    .acf-info-dialog-title {
+        font-size: 1.15rem;
+        box-sizing: border-box;
+        padding: 0 1rem;
+        margin: 0 0 0.5rem 0;
+        width: 100%;
+        overflow: visible;
+        text-align: center;
+        word-break: break-word;
+        line-height: 1.2;
+        flex: 1 1 auto;
+        white-space: normal;
+        color: #095c2e;
+    }
+
+    .acf-info-dialog-image {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        box-sizing: border-box;
+        border-top-left-radius: 18px;
+        border-top-right-radius: 18px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        margin-bottom: 1.2rem;
+        box-shadow: none;
+        background: transparent;
+        object-fit: contain;
+        display: block;
+        overflow-x: hidden;
+    }
+
+    .acf-info-dialog-scroll {
+        flex: 1 1 auto;
+        min-height: 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        padding: 0 0 1.5rem 0;
+        word-break: break-word;
+    }
+
+    .acf-info-dialog-body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        word-break: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
+        box-sizing: border-box;
+        padding: 0 1.5rem;
+    }
+
+    .acf-info-dialog-image-wrapper {
+        padding: 0 1.5rem;
+        border-top-left-radius: 18px;
+        border-top-right-radius: 18px;
+        overflow: hidden;
+        margin-bottom: 1.2rem;
+        box-sizing: border-box;
+    }
+    .acf-info-dialog-image {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        display: block;
+        object-fit: contain;
+        border-top-left-radius: 18px;
+        border-top-right-radius: 18px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background: transparent;
+    }
+
+    .acf-info-dialog-scroll img,
+    .acf-info-dialog-scroll video {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .acf-info-dialog-scroll table {
+        table-layout: fixed;
+        width: 100%;
+    }
+}
