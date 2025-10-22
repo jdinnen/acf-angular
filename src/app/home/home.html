@@ -1,34 +1,36 @@
-<section class="acf-hero">
-    <img src="images/sections/music.jpg" alt="Austin Celtic Festival" class="acf-main-image" />
-</section>
+<div class="acf-main">
+    <section class="acf-hero">
+        <img src="images/sections/music.jpg" alt="Austin Celtic Festival" class="acf-main-image" />
+    </section>
 
-<section class="acf-event-info">
-    <h2 class="mat-headline-medium">November 8 and 9, 2025 at Pioneer Farms in North Austin</h2>
-</section>
+    <section class="acf-event-info">
+        <h2 class="mat-headline-medium">November 8 and 9, 2025 at Pioneer Farms in North Austin</h2>
+    </section>
 
-<div class="acf-card-grid">
-    @for (card of cards; track $index) {
-    <div class="acf-card">
-        <img class="acf-card-image" [src]="card.img" [alt]="card.alt" />
-        <div class="acf-card-title">{{ card.title }}</div>
-        <div class="acf-card-content">
-            <p>{{ card.content }}</p>
+    <div class="acf-card-grid">
+        @for (card of cards; track $index) {
+        <div class="acf-card">
+            <img class="acf-card-image" [src]="card.img" [alt]="card.alt" />
+            <div class="acf-card-title">{{ card.title }}</div>
+            <div class="acf-card-content">
+                <p>{{ card.content }}</p>
+            </div>
         </div>
+        }
     </div>
-    }
-</div>
 
-<section class="acf-info-card">
-    <div>
-        <p class="mat-body-large">The Austin Celtic Festival is a premier celebration of Celtic culture, music, and
-            arts, held annually in
-            Austin, Texas. This vibrant festival brings together top-tier performers, musicians, dancers, and artists
-            from around the world to showcase the rich traditions of Ireland, Scotland, Wales, and other Celtic nations.
-        </p>
-        <p>Volunteer opportunities are available for adults and students needing to earn service hours. The Austin
-            Celtic Festival is produced by the Austin Celtic Association and the Celtic Cultural Center of Texas and is
-            a federally recognized nonprofit 501c3. Email contact: austincelticfestival@gmail.com</p>
-        <p>A friendly family event, fun for all ages, and open to all.</p>
-        <p><strong>Get your tickets today.</strong><br>No ticket sales at the gate. Online only.<br>Rain or Shine.</p>
-    </div>
-</section>
+    <section class="acf-info-card">
+        <div>
+            <p class="mat-body-large">The Austin Celtic Festival is a premier celebration of Celtic culture, music, and
+                arts, held annually in
+                Austin, Texas. This vibrant festival brings together top-tier performers, musicians, dancers, and artists
+                from around the world to showcase the rich traditions of Ireland, Scotland, Wales, and other Celtic nations.
+            </p>
+            <p>Volunteer opportunities are available for adults and students needing to earn service hours. The Austin
+                Celtic Festival is produced by the Austin Celtic Association and the Celtic Cultural Center of Texas and is
+                a federally recognized nonprofit 501c3. Email contact: austincelticfestival@gmail.com</p>
+            <p>A friendly family event, fun for all ages, and open to all.</p>
+            <p><strong>Get your tickets today.</strong><br>No ticket sales at the gate. Online only.<br>Rain or Shine.</p>
+        </div>
+    </section>
+</div>

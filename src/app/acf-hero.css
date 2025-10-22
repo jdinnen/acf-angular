@@ -1,46 +1,77 @@
-.acf-hero {
+.acf-main {
   width: 100%;
-  background: var(--celtic-cream, #f7f5ee);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  padding: 2rem 0 1rem 0;
+  padding: 2.5rem 0.5rem;
+  background: #ede6d6;
   box-sizing: border-box;
+}
+
+.acf-hero {
+    /* width removed to allow container to shrink and center */
+    min-width: 0;
+    background: var(--celtic-cream, #f7f5ee);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0 1rem 0;
+    box-sizing: border-box;
 }
 
 .acf-main-image {
-  max-width: 900px;
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 4px 24px rgba(30, 42, 68, 0.08);
-  margin-left: 12px;
-  margin-right: 12px;
-  box-sizing: border-box;
+    max-width: 900px;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(30, 42, 68, 0.08);
+    margin-left: 12px;
+    margin-right: 12px;
+    box-sizing: border-box;
+    display: block;
+    object-fit: cover;
 }
 
-@media (max-width: 900px) {
-  .acf-main-image {
-    margin-left: 8px;
-    margin-right: 8px;
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-    border-radius: 12px;
-    background: #fff;
-  }
+@media (min-width: 601px) and (max-width: 900px) {
+    .acf-hero {
+        width: 100vw !important;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        position: relative;
+        padding: 2rem 0 1rem 0 !important;
+        box-sizing: border-box !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: var(--celtic-cream, #f7f5ee) !important;
+        z-index: 0;
+    }
+    .acf-main-image {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        max-height: 380px !important;
+        object-fit: cover !important;
+        border-radius: 14px !important;
+        background: none !important;
+        display: block !important;
+        box-sizing: border-box !important;
+    }
 }
 
 @media (max-width: 600px) {
-  .acf-hero {
-    padding: 1.2rem 0.5rem 0.7rem 0.5rem;
-  }
-  .acf-main-image {
-    margin-left: 4px;
-    margin-right: 4px;
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-    border-radius: 10px;
-    background: #fff;
-  }
+    .acf-hero {
+        padding: 1.2rem 1rem 1rem 1rem;
+        box-sizing: border-box;
+    }
+    .acf-main-image {
+        max-width: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        box-sizing: border-box;
+    }
 }
