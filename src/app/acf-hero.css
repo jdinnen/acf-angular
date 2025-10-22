@@ -9,7 +9,6 @@
 }
 
 .acf-hero {
-    /* width removed to allow container to shrink and center */
     min-width: 0;
     background: var(--celtic-cream, #f7f5ee);
     display: flex;
