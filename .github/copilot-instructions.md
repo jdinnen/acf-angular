@@ -142,3 +142,7 @@ This is a modern Angular 20.3 application with SSR (Server-Side Rendering) capab
 - Maintain **high test coverage** with Karma/Jasmine; all logic and UI must have `.spec.ts` tests.
 - **Never use deprecated Angular template syntax**: always use `@if`, `@for` blocks, never `*ngIf`, `*ngFor`.
 - Co-locate component `.ts`, `.html`
+
+## Responsive Design Best Practice
+
+When creating new pages or components, always ensure responsiveness for tablet, phone, and desktop. All layouts and UI elements must be tested and styled for these breakpoints to guarantee a seamless experience across devices.
