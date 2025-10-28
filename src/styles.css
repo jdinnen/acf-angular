@@ -66,6 +66,9 @@ app-root {
 	height: 100%;
 }
 
+/* Prevent accidental horizontal scroll from any overflowing child */
+html, body { overflow-x: hidden; }
+
 h1,
 .celtic-h1 {
 	font-family: 'Calistoga', serif;
@@ -129,6 +132,7 @@ header {
 .volunteer-main,
 .highland-games-main,
 .host-hotel-main,
+.workshops-main,
 .footer-content {
 	padding-left: var(--gutter-md);
 	padding-right: var(--gutter-md);
@@ -142,6 +146,7 @@ header {
 	.volunteer-main,
 	.highland-games-main,
 	.host-hotel-main,
+	.workshops-main,
 	.footer-content {
 		padding-left: var(--gutter-xs);
 		padding-right: var(--gutter-xs);
@@ -156,6 +161,7 @@ header {
 	.volunteer-main,
 	.highland-games-main,
 	.host-hotel-main,
+	.workshops-main,
 	.footer-content {
 		padding-left: var(--gutter-sm);
 		padding-right: var(--gutter-sm);
@@ -170,6 +176,7 @@ header {
 	.volunteer-main,
 	.highland-games-main,
 	.host-hotel-main,
+	.workshops-main,
 	.footer-content {
 		padding-left: var(--gutter-lg);
 		padding-right: var(--gutter-lg);

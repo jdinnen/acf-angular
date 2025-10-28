@@ -1,0 +1,33 @@
+/* Page hero now uses the shared <acf-hero> component */
+
+/* Header */
+.workshops-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin: 0.6rem 0 0.5rem; background: transparent !important; color: inherit !important; padding: 0; }
+.jump-links { display: flex; align-items: center; gap: 0.5rem; }
+.workshops-header h1 { margin: 0; }
+.jump-link { color: #2b4e1e; background: #e6f0df; border: 1px solid #2b4e1e33; padding: 0.4rem 0.7rem; border-radius: 6px; text-decoration: none; font-weight: 700; }
+
+/* Intro card */
+.intro-section { margin: 0.6rem 0 1.4rem; }
+.intro-card { background: #fff; color: #1e2a44; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.12); padding: 1.2rem; }
+.intro-title { margin: 0 0 0.4rem 0; font-family: 'Calistoga', serif; text-transform: uppercase; font-size: 1.2rem; }
+.intro-card h3 { margin-top: 0.9rem; }
+.intro-cta { margin-top: 0.8rem; }
+.buy-btn { background: #2b4e1e; color: #fff; text-decoration: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: 700; display: inline-block; }
+.buy-btn:hover { background: #095c2e; }
+
+/* Day sections */
+.day-title { font-family: 'Calistoga', serif; margin: 1rem 0 0.6rem; }
+.workshop-list { display: grid; gap: 1rem; }
+.day-section { scroll-margin-top: 72px; }
+
+/* Spacing on small screens */
+@media (max-width: 599px) {
+  .workshops-header { flex-direction: column; align-items: stretch; gap: 0.4rem; margin-top: 0.2rem; }
+  .jump-links { align-self: flex-end; }
+}
+
+/* Small and large tablets: right-align jump link and tighten spacing */
+@media (min-width: 600px) and (max-width: 1199px) {
+  .workshops-header { flex-direction: column; align-items: stretch; gap: 0.5rem; margin-top: 0.3rem; }
+  .jump-links { align-self: flex-end; }
+}

@@ -1,0 +1,17 @@
+<article class="workshop-card">
+  <h3 class="workshop-title">{{ title }}</h3>
+  <div class="workshop-body">
+    <div class="workshop-image-box">
+      <img class="workshop-image" [src]="image" [alt]="title" />
+    </div>
+    <div class="workshop-info">
+      <ul class="workshop-meta">
+        <li *ngIf="date"><strong>Date:</strong> {{ date }}</li>
+        <li *ngIf="time"><strong>Time:</strong> {{ time }}</li>
+        <li *ngIf="location"><strong>Location:</strong> {{ location }}</li>
+        <li *ngIf="fee"><strong>Fee:</strong> {{ fee }}</li>
+      </ul>
+      <p class="workshop-desc">{{ description }}</p>
+    </div>
+  </div>
+</article>

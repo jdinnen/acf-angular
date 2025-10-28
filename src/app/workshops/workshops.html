@@ -1,0 +1,76 @@
+<!-- Full-bleed hero (outside padded main wrapper) -->
+<acf-hero src="images/sections/workshops.jpg" alt="Festival Workshops" />
+
+<main class="workshops-main">
+
+  <!-- Page title + quick link -->
+  <header class="workshops-header">
+    <h1 class="celtic-h1">2025 Festival Workshops</h1>
+    <nav class="jump-links" aria-label="Quick jumps">
+      <a class="jump-link" href="#saturday" (click)="onJump($event, 'saturday')">Jump to Saturday</a>
+      <a class="jump-link" href="#sunday" (click)="onJump($event, 'sunday')">Jump to Sunday</a>
+    </nav>
+  </header>
+
+  <!-- Intro card -->
+  <section class="intro-section">
+    <article class="intro-card">
+      <h2 class="intro-title">2025 FESTIVAL WORKSHOPS</h2>
+      <p>
+        The Austin Celtic Festival is proud to offer students and interested parties the chance to be directed and counseled by some of today's leading experts in Celtic music. In general, our workshops, led by our headliners, are casual, question-and-answer arenas for persons already familiar with the subject instrument and are looking for progressive instruction or a chance to ask more complex questions. You should also be prepared for the practical application of a particular technique or style favored by the headlining instructor.
+      </p>
+      <p>
+        The direction and focus of the workshops can be fluid and developed based on the needs of the attending students. Although they might not necessarily be needed, a well-prepared student will have their instrument, pen and paper, and a recorder with them. These workshops are limited to a smaller number to be more effective. Novice or beginners may purchase tickets and attend as observers.
+      </p>
+      <p><strong>Beginner</strong>: You are brand new to the instrument and have yet to make a sound; your first steps into a larger world!</p>
+      <p><strong>Intermediate</strong>: You have spent a bit of time on your instrument and even have a tune or two under your belt, but still have more questions than answers.</p>
+      <p><strong>Advanced</strong>: You have a solid repertoire of tunes, but maybe you still have a few blind-spots you'd like some help with.</p>
+      <h3>Reminders</h3>
+      <ul>
+        <li>You must purchase a ticket to the festival in addition to the workshop fee if applicable. Both must be purchased here online on the ticket tab.</li>
+        <li>Click on the "Buy Tickets" button and scroll down to the workshop you wish to attend and purchase a ticket if there is a charge.</li>
+        <li>If you have not already purchased a Festival ticket, you can do so at this time.</li>
+        <li>If you have already purchased a Festival Ticket, there is no need to purchase another.</li>
+      </ul>
+      <div class="intro-cta">
+        <a class="buy-btn" [routerLink]="'/tickets'">Buy Tickets</a>
+      </div>
+    </article>
+  </section>
+
+  <!-- Saturday -->
+  <section class="day-section" id="saturday" aria-labelledby="sat-heading">
+    <h2 id="sat-heading" class="day-title">Saturday Workshops</h2>
+    <div class="workshop-list">
+      @for (w of saturday(); track $index) {
+        <acf-workshop-card
+          [title]="w.title"
+          [image]="w.image"
+          [date]="w.date"
+          [time]="w.time"
+          [location]="w.location"
+          [fee]="w.fee"
+          [description]="w.description"
+        />
+      }
+    </div>
+  </section>
+
+  <!-- Sunday -->
+  <section class="day-section" id="sunday" aria-labelledby="sun-heading">
+    <h2 id="sun-heading" class="day-title">Sunday Workshops</h2>
+    <div class="workshop-list">
+      @for (w of sunday(); track $index) {
+        <acf-workshop-card
+          [title]="w.title"
+          [image]="w.image"
+          [date]="w.date"
+          [time]="w.time"
+          [location]="w.location"
+          [fee]="w.fee"
+          [description]="w.description"
+        />
+      }
+    </div>
+  </section>
+</main>

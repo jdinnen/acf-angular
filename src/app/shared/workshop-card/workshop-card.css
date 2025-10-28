@@ -1,0 +1,60 @@
+/* Container */
+.workshop-card {
+  background: #fff;
+  color: #1e2a44;
+  border-radius: 10px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+/* Title */
+.workshop-title {
+  margin: 0 0 0.6rem 0;
+  font-family: 'Calistoga', serif;
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+
+/* Grid body */
+.workshop-body {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.8rem;
+}
+
+.workshop-image-box {
+  width: 100%;
+}
+
+.workshop-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.workshop-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.workshop-meta {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.workshop-meta li { margin: 0.12rem 0; }
+.workshop-meta strong { font-weight: 700; }
+
+.workshop-desc { margin: 0.3rem 0 0.2rem; }
+
+/* Two-column from 900px (md) up */
+@media (min-width: 900px) {
+  .workshop-body {
+    grid-template-columns: 320px 1fr;
+    align-items: start;
+  }
+}

@@ -1,6 +1,4 @@
-<section class="acf-hero">
-  <img [src]="heroImg" alt="Celtic Animals Hero" class="acf-main-image" />
-</section>
+<acf-hero [src]="heroImg" alt="Celtic Animals Hero" />
 <div class="animals-main">
   <div class="animals-card-grid acf-grid cols-1-xs cols-2-sm-up" acfCardGridSizer>
     @for (card of cards; track $index) {

@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AcfCard } from '../shared/acf-card/acf-card';
 import { AcfCardGridSizer } from '../shared/acf-card/acf-card-grid-sizer';
+import { AcfHero } from '../shared/acf-hero/acf-hero';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, AcfCard, AcfCardGridSizer],
+  imports: [CommonModule, AcfCard, AcfCardGridSizer, AcfHero],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })

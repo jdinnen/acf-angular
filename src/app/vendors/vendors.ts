@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
+import { AcfHero } from '../shared/acf-hero/acf-hero';
 
 @Component({
   selector: 'acf-vendors',
   standalone: true,
-  imports: [CommonModule, MatButtonModule],
+  imports: [CommonModule, MatButtonModule, AcfHero],
   templateUrl: './vendors.html',
   styleUrls: ['./vendors.css']
 })

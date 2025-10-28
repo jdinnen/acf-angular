@@ -1,0 +1,55 @@
+/* Consolidated hero styles scoped to the component */
+.acf-hero {
+  width: 100%;
+  min-width: 0;
+  background: var(--celtic-cream, #f7f5ee);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: clamp(16px, 6vw, 72px) clamp(12px, 5vw, 40px) 1.5rem;
+  box-sizing: border-box;
+}
+
+.acf-main-image {
+  width: 100%;
+  max-width: 1100px;
+  height: auto;
+  margin-inline: auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(30, 42, 68, 0.12);
+  display: block;
+  box-sizing: border-box;
+}
+
+/* xs */
+@media (max-width: 599px) {
+  .acf-hero {
+    padding: clamp(12px, 5vw, 20px) clamp(12px, 5vw, 20px) 1rem;
+  }
+  .acf-main-image {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(30, 42, 68, 0.12);
+  }
+}
+
+/* sm */
+@media (min-width: 600px) and (max-width: 899px) {
+  .acf-hero {
+    padding: clamp(16px, 5.5vw, 28px) clamp(16px, 5.5vw, 32px) 1.2rem;
+  }
+  .acf-main-image {
+    max-width: 900px;
+    border-radius: 14px;
+  }
+}
+
+/* md */
+@media (min-width: 900px) and (max-width: 1199px) {
+  .acf-hero {
+    padding: clamp(20px, 5vw, 36px) clamp(20px, 5vw, 36px) 1.4rem;
+  }
+  .acf-main-image {
+    max-width: 1000px;
+  }
+}

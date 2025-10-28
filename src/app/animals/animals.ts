@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AcfCard } from '../shared/acf-card/acf-card';
+import { AcfHero } from '../shared/acf-hero/acf-hero';
 import { AcfCardGridSizer } from '../shared/acf-card/acf-card-grid-sizer';
 interface AnimalCard {
   title: string;
@@ -10,7 +11,7 @@ interface AnimalCard {
 @Component({
   selector: 'acf-animals',
   standalone: true,
-  imports: [CommonModule, AcfCard, AcfCardGridSizer],
+  imports: [CommonModule, AcfCard, AcfCardGridSizer, AcfHero],
   templateUrl: './animals.html',
   styleUrls: ['./animals.css']
 })
