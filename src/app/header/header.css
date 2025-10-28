@@ -35,6 +35,9 @@
   }
 }
 @media (min-width: 1200px) {
+  /* Keep title on one line on desktop */
+  .acf-hero-title { flex-wrap: nowrap; }
+
   ::ng-deep .mat-mdc-menu-panel,
   ::ng-deep .cdk-overlay-pane {
     background: #095c2e !important;
@@ -281,10 +284,11 @@
 /* Main title and celtic word split for mobile control */
 .acf-hero-title {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 0;
+  gap: 0.5rem;
 }
 
 .acf-hero-main {
@@ -312,7 +316,7 @@
 
 @media (max-width: 1199px) {
   .acf-hero-title {
-    gap: 0;
+    gap: 0.2rem; /* ensure visible spacing between words on tablet/phone */
   }
 
   .acf-hero-main,
@@ -351,7 +355,7 @@
 
 @media (max-width: 600px) {
   .acf-hero-title {
-    gap: 0;
+    gap: 0.12rem; /* slight spacing on small phones */
   }
 
   .acf-hero-main {
