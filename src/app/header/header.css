@@ -501,7 +501,8 @@
 .celtic-header {
   background: linear-gradient(180deg, #d6d1c2 0%, #bdb7a6 100%);
   color: #2a220e;
-  padding: 2.5rem 0 0.5rem 0;
+  /* Tighten vertical padding to reduce space above the hero */
+  padding: 1.2rem 0 0.25rem 0;
   min-height: 0;
   display: flex;
   flex-direction: column;

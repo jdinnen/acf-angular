@@ -6,7 +6,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: clamp(16px, 6vw, 72px) clamp(12px, 5vw, 40px) 1.5rem;
+  /* Equal top/bottom spacing (reduced top to match bottom) */
+  padding: 1.5rem clamp(12px, 5vw, 40px);
   box-sizing: border-box;
 }
 
@@ -24,7 +25,8 @@
 /* xs */
 @media (max-width: 599px) {
   .acf-hero {
-    padding: clamp(12px, 5vw, 20px) clamp(12px, 5vw, 20px) 1rem;
+    /* Equal top/bottom spacing on phones */
+    padding: 1rem clamp(12px, 5vw, 20px);
   }
   .acf-main-image {
     max-width: 100%;
@@ -36,7 +38,8 @@
 /* sm */
 @media (min-width: 600px) and (max-width: 899px) {
   .acf-hero {
-    padding: clamp(16px, 5.5vw, 28px) clamp(16px, 5.5vw, 32px) 1.2rem;
+    /* Equal top/bottom spacing on small tablets */
+    padding: 1.2rem clamp(16px, 5.5vw, 32px);
   }
   .acf-main-image {
     max-width: 900px;
@@ -47,9 +50,18 @@
 /* md */
 @media (min-width: 900px) and (max-width: 1199px) {
   .acf-hero {
-    padding: clamp(20px, 5vw, 36px) clamp(20px, 5vw, 36px) 1.4rem;
+    /* Equal top/bottom spacing on large tablets */
+    padding: 1.4rem clamp(20px, 5vw, 36px);
   }
   .acf-main-image {
     max-width: 1000px;
+  }
+}
+
+/* lg+ */
+@media (min-width: 1200px) {
+  .acf-hero {
+    /* Equal and tighter vertical spacing on desktop to reduce whitespace */
+    padding: 1rem clamp(20px, 5vw, 48px);
   }
 }
