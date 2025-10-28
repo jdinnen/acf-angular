@@ -23,8 +23,8 @@ export class Schedules {
     'Remember, schedules are subject to change.'
   ];
   readonly scheduleDays: ScheduleDay[] = [
-    { day: 'Saturday', pdf: '/images/schedules/saturday-schedule-2025.pdf' },
-    { day: 'Sunday', pdf: '/images/schedules/sunday-schedule-2025.pdf' }
+  { day: 'Saturday', pdf: 'images/schedules/saturday-schedule-2025.pdf' },
+  { day: 'Sunday', pdf: 'images/schedules/sunday-schedule-2025.pdf' }
   ];
 }
 

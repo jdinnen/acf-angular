@@ -59,7 +59,7 @@ const volunteerOpportunities = [
             <h2 class="volunteer-card-title">{{ opp.title }}</h2>
             <p class="volunteer-card-desc">{{ opp.description }}</p>
             <a href="{{ opp.link }}" target="_blank" rel="noopener">
-              <img src="/images/sign-up.gif" alt="Sign Up" class="volunteer-signup-img" />
+              <img src="images/sign-up.gif" alt="Sign Up" class="volunteer-signup-img" />
             </a>
           </mat-card>
         }

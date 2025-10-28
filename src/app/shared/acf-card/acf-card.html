@@ -2,7 +2,7 @@
   <!-- When href is provided, render an anchor; when clickable is true, render a button-like div; otherwise plain card -->
   <a *ngIf="href; else nonLink" class="acf-card" [href]="href" rel="noopener" target="_self">
     <div class="acf-card-image-box">
-      <img class="acf-card-image" [src]="image" [alt]="title" />
+      <img class="acf-card-image" [src]="resolvedImage" [alt]="title" />
     </div>
     <h3 class="acf-card-title">{{ title }}</h3>
     <div class="acf-card-content">{{ content }}</div>
@@ -10,7 +10,7 @@
   <ng-template #nonLink>
     <div class="acf-card" [attr.role]="clickable ? 'button' : null" tabindex="0" (click)="onActivate($event)" (keydown.enter)="onActivate($event)" (keydown.space)="onActivate($event)">
       <div class="acf-card-image-box">
-        <img class="acf-card-image" [src]="image" [alt]="title" />
+        <img class="acf-card-image" [src]="resolvedImage" [alt]="title" />
       </div>
       <h3 class="acf-card-title">{{ title }}</h3>
       <div class="acf-card-content">{{ content }}</div>

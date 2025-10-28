@@ -38,10 +38,24 @@ jobs:
           cp -R dist/acf-angular/browser/* out/
           # Set base href for project pages (https://<user>.github.io/<repo>/)
           find out -type f -name "*.html" -print0 | xargs -0 sed -i 's#<base href="/">#<base href="/acf-angular/">#g'
-          # Fix absolute image paths so they work under /acf-angular (handle both " and ')
-          find out -type f -name "*.html" -print0 | xargs -0 sed -i 's#="/images/#="/acf-angular/images/#g'
-          find out -type f -name "*.html" -print0 | xargs -0 sed -i "s#='/images/#='/acf-angular/images/#g"
-          find out -type f -name "*.css" -print0 | xargs -0 sed -i 's#url(/images/#url(/acf-angular/images/#g'
+          # Rewrite root-relative internal links to include the subpath, avoiding 404s on Pages.
+          # Double-quoted href variants
+          find out -type f -name "*.html" -print0 | xargs -0 sed -i 's#href="/acf-angular/#href="@HREFBASE@/#g'
+          find out -type f -name "*.html" -print0 | xargs -0 sed -i 's#href="/#href="/acf-angular/#g'
+          find out -type f -name "*.html" -print0 | xargs -0 sed -i 's#href="@HREFBASE@/#href="/acf-angular/#g'
+          # Single-quoted href variants
+          find out -type f -name "*.html" -print0 | xargs -0 sed -i "s#href='/acf-angular/#href='@HREFBASE@/#g"
+          find out -type f -name "*.html" -print0 | xargs -0 sed -i "s#href='/#href='/acf-angular/#g"
+          find out -type f -name "*.html" -print0 | xargs -0 sed -i "s#href='@HREFBASE@/#href='/acf-angular/#g"
+          # Rewrite root-relative internal links to include subpath, avoiding double-prefixing
+          # Protect already-correct hrefs
+          find out -type f -name "*.html" -print0 | xargs -0 sed -i 's#href="/acf-angular/#href="@HREFBASE@/#g'
+          find out -type f -name "*.html" -print0 | xargs -0 sed -i 's#href="/#href="/acf-angular/#g'
+          find out -type f -name "*.html" -print0 | xargs -0 sed -i 's#href="@HREFBASE@/#href="/acf-angular/#g'
+          # Single-quoted variants
+          find out -type f -name "*.html" -print0 | xargs -0 sed -i "s#href='/acf-angular/#href='@HREFBASE@/#g"
+          find out -type f -name "*.html" -print0 | xargs -0 sed -i "s#href='/#href='/acf-angular/#g"
+          find out -type f -name "*.html" -print0 | xargs -0 sed -i "s#href='@HREFBASE@/#href='/acf-angular/#g"
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

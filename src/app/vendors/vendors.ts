@@ -12,7 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 export class Vendors {
   foodVendor = {
     title: 'Festival Food Vendors',
-    image: '/images/vendors/food.jpg',
+  image: 'images/vendors/food.jpg',
     button: {
       label: 'Apply Online',
       link: 'https://www.austincelticfestival.com/food-vendor-application'
@@ -20,7 +20,7 @@ export class Vendors {
   };
   merchVendor = {
     title: 'Celtic Merchandise Vendors',
-    image: '/images/vendors/merch.jpg',
+  image: 'images/vendors/merch.jpg',
     button: {
       label: 'Apply Online',
       link: 'https://www.austincelticfestival.com/merchandise-vendor-application-form'
