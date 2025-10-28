@@ -2,6 +2,8 @@ import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
 import { AcfInfoDialogComponent, AcfInfoDialogData } from './acf-info-dialog';
+import { AcfCard } from '../shared/acf-card/acf-card';
+import { AcfCardGridSizer } from '../shared/acf-card/acf-card-grid-sizer';
 
 interface HighlandGameCard {
   title: string;
@@ -52,7 +54,7 @@ const HIGHLAND_GAMES_CARDS: HighlandGameCard[] = [
 @Component({
   selector: 'app-highland-games',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, AcfCard, AcfCardGridSizer],
   styleUrl: './highland-games.css',
   templateUrl: './highland-games.html'
 })

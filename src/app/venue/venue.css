@@ -5,7 +5,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2.5rem 0.5rem;
+    /* Material responsive gutters: 16px (xs), 24px (sm/md), 32px (lg) */
+    padding: 2.5rem clamp(16px, 5vw, 32px);
     background: #ede6d6;
     box-sizing: border-box;
 }
@@ -73,11 +74,24 @@
     margin-top: 1.2rem;
 }
 
+/* sm range: 600–899 (small tablets) */
+@media (min-width: 600px) and (max-width: 899px) {
+    .venue-main {
+        padding: 2rem 24px;
+    }
+    .venue-cards {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/* legacy <=900 fallback kept minimal */
 @media (max-width: 900px) {
     .venue-cards {
         grid-template-columns: 1fr;
         gap: 1.2rem;
-        padding: 0;
         max-width: 100%;
         box-sizing: border-box;
     }
@@ -89,15 +103,15 @@
     }
 }
 
-@media (max-width: 600px) {
+/* xs range: 0–599 (phones) */
+@media (max-width: 599px) {
     .venue-main {
-        padding: 1.2rem 0.5rem;
+        padding: 1.6rem 16px;
         box-sizing: border-box;
     }
 
     .venue-cards {
         gap: 1.2rem;
-        padding: 0;
         max-width: 100%;
         box-sizing: border-box;
     }

@@ -37,6 +37,18 @@
 	--oklch-cream: oklch(98% 0.02 90);
 	--oklch-rust: oklch(60% 0.15 30);
 	--oklch-green: oklch(35% 0.09 140);
+
+	/* Standard responsive gutters (Material breakpoints) */
+	--gutter-xs: 16px; /* 0–599px */
+	--gutter-sm: 24px; /* 600–899px */
+	--gutter-md: clamp(24px, 5vw, 40px); /* 900–1199px */
+	--gutter-lg: clamp(32px, 5vw, 64px); /* ≥1200px */
+
+	/* Standard grid gaps (for utility .acf-grid) */
+	--grid-gap-xs: 0.25rem;
+	--grid-gap-sm: 0.25rem;
+	--grid-gap-md: 0.5rem;
+	--grid-gap-lg: 0.5rem;
 }
 
 body,
@@ -63,4 +75,103 @@ h1,
 header {
 	background: var(--md-source);
 	color: var(--md-primary);
+}
+
+/* Responsive grid utilities (centralize phone/tablet/desktop columns in one place) */
+.acf-grid { display: grid; gap: var(--grid-gap-md); }
+
+/* xs (mobile) */
+@media (max-width: 599px) {
+	.acf-grid { gap: var(--grid-gap-xs); }
+	.cols-1-xs { grid-template-columns: 1fr !important; }
+}
+
+/* sm (small tablet) */
+@media (min-width: 600px) and (max-width: 899px) {
+	.acf-grid { gap: var(--grid-gap-sm); }
+	.cols-2-sm { grid-template-columns: repeat(2, 1fr) !important; }
+	.cols-2-sm-up { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+/* md (large tablet / small desktop) */
+@media (min-width: 900px) and (max-width: 1199px) {
+	.acf-grid { gap: var(--grid-gap-md); }
+	.cols-2-md { grid-template-columns: repeat(2, 1fr) !important; }
+	.cols-3-md { grid-template-columns: repeat(3, 1fr) !important; }
+}
+
+/* lg+ (desktop and up) */
+@media (min-width: 1200px) {
+	.acf-grid { gap: var(--grid-gap-lg); }
+	.cols-2-lg { grid-template-columns: repeat(2, 1fr) !important; }
+	.cols-3-lg { grid-template-columns: repeat(3, 1fr) !important; }
+}
+
+/* Helper: 3 columns from md and up */
+@media (min-width: 900px) {
+	.cols-3-md-up { grid-template-columns: repeat(3, 1fr) !important; }
+}
+
+/* Ensure 2 cols persist from small tablets upward */
+@media (min-width: 600px) {
+	.cols-2-sm-up { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+/*
+  Standard page gutters
+  Apply consistent horizontal padding across all pages at Material breakpoints.
+  Pages can still add vertical padding locally without redefining side paddings.
+*/
+.performers-main,
+.animals-main,
+.schedules-main,
+.vendors-main,
+.volunteer-main,
+.highland-games-main,
+.host-hotel-main,
+.footer-content {
+	padding-left: var(--gutter-md);
+	padding-right: var(--gutter-md);
+}
+
+@media (max-width: 599px) {
+	.performers-main,
+	.animals-main,
+	.schedules-main,
+	.vendors-main,
+	.volunteer-main,
+	.highland-games-main,
+	.host-hotel-main,
+	.footer-content {
+		padding-left: var(--gutter-xs);
+		padding-right: var(--gutter-xs);
+	}
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+	.performers-main,
+	.animals-main,
+	.schedules-main,
+	.vendors-main,
+	.volunteer-main,
+	.highland-games-main,
+	.host-hotel-main,
+	.footer-content {
+		padding-left: var(--gutter-sm);
+		padding-right: var(--gutter-sm);
+	}
+}
+
+@media (min-width: 1200px) {
+	.performers-main,
+	.animals-main,
+	.schedules-main,
+	.vendors-main,
+	.volunteer-main,
+	.highland-games-main,
+	.host-hotel-main,
+	.footer-content {
+		padding-left: var(--gutter-lg);
+		padding-right: var(--gutter-lg);
+	}
 }

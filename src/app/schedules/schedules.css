@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2.5rem 0.5rem;
+  padding: 2.5rem 0;
   background: #ede6d6;
   box-sizing: border-box;
 }
@@ -101,7 +101,7 @@
 }
 @media (max-width: 700px) {
   .schedules-main {
-    padding: 1.2rem 0.7rem;
+    padding: 1.2rem 0;
   }
   .schedules-intro-card {
     padding: 1.2rem 0.7rem;

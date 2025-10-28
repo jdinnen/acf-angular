@@ -1,76 +1,70 @@
+/* Container for the hero section background */
 .acf-main {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2.5rem 0.5rem;
-  background: #ede6d6;
-  box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* No dark spacing around the full-bleed hero band */
+    padding: 0 0 2rem;
+    background: #ede6d6;
+    box-sizing: border-box;
 }
 
+/* Full-width light background band with centered content */
 .acf-hero {
+    width: 100%;
     min-width: 0;
     background: var(--celtic-cream, #f7f5ee);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem 0 1rem 0;
+    /* Add top padding inside the light band; keep horizontal & bottom breathing room */
+    padding:  clamp(16px, 6vw, 72px) clamp(12px, 5vw, 40px) 1.5rem; /* top | left/right | bottom */
     box-sizing: border-box;
 }
 
+/* The main hero image: centered, non-distorted, Material elevation */
 .acf-main-image {
-    max-width: 900px;
-    border-radius: 12px;
-    box-shadow: 0 4px 24px rgba(30, 42, 68, 0.08);
-    margin-left: 12px;
-    margin-right: 12px;
-    box-sizing: border-box;
+    width: 100%;
+    max-width: 1100px; /* cap on large screens */
+    height: auto;      /* preserve aspect ratio */
+    margin-inline: auto;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(30, 42, 68, 0.12);
     display: block;
-    object-fit: cover;
+    box-sizing: border-box;
 }
 
-@media (min-width: 601px) and (max-width: 900px) {
+/* Material breakpoints */
+/* xs: 0–599 */
+@media (max-width: 599px) {
     .acf-hero {
-        width: 100vw !important;
-        left: 50%;
-        right: 50%;
-        margin-left: -50vw;
-        margin-right: -50vw;
-        position: relative;
-        padding: 2rem 0 1rem 0 !important;
-        box-sizing: border-box !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        background: var(--celtic-cream, #f7f5ee) !important;
-        z-index: 0;
-    }
-    .acf-main-image {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin: 0 !important;
-        max-height: 380px !important;
-        object-fit: cover !important;
-        border-radius: 14px !important;
-        background: none !important;
-        display: block !important;
-        box-sizing: border-box !important;
-    }
-}
-
-@media (max-width: 600px) {
-    .acf-hero {
-        padding: 1.2rem 1rem 1rem 1rem;
-        box-sizing: border-box;
+        padding: clamp(12px, 5vw, 20px) clamp(12px, 5vw, 20px) 1rem;
     }
     .acf-main-image {
         max-width: 100%;
-        width: 100%;
-        object-fit: cover;
         border-radius: 12px;
-        margin-left: 0.5rem;
-        margin-right: 0.5rem;
-        box-sizing: border-box;
+        box-shadow: 0 4px 16px rgba(30, 42, 68, 0.12);
+    }
+}
+
+/* sm: 600–899 (small tablets) */
+@media (min-width: 600px) and (max-width: 899px) {
+    .acf-hero {
+        padding: clamp(16px, 5.5vw, 28px) clamp(16px, 5.5vw, 32px) 1.2rem;
+    }
+    .acf-main-image {
+        max-width: 900px;
+        border-radius: 14px;
+    }
+}
+
+/* md: 900–1199 (large tablets / small desktops) */
+@media (min-width: 900px) and (max-width: 1199px) {
+    .acf-hero {
+        padding: clamp(20px, 5vw, 36px) clamp(20px, 5vw, 36px) 1.4rem;
+    }
+    .acf-main-image {
+        max-width: 1000px;
     }
 }

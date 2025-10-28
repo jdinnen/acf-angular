@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2.5rem 0.5rem;
+  padding: 2.5rem 0;
   background: #ede6d6;
   box-sizing: border-box;
 }
@@ -18,74 +18,12 @@
   margin: 0 auto;
   box-sizing: border-box;
 }
-.animals-card {
-  border-radius: 20px;
-  background: #fff;
-  color: #222;
-  box-shadow: 0 8px 32px rgba(30, 42, 68, 0.32);
-  border: 5px solid #c8a45a;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 340px;
-  justify-content: flex-start;
-  padding: 2rem 1.5rem 1.5rem 1.5rem;
-  margin: 0.25rem;
-  overflow: hidden;
-  transition: box-shadow 0.2s, border-color 0.2s;
+@media (min-width: 600px) and (max-width: 899px) {
+  .animals-card-grid { gap: var(--grid-gap-sm); }
 }
-.animals-card-image {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  max-height: 260px;
-  object-fit: cover;
-  border-radius: 20px 20px 0 0;
-  margin: 0 0 1rem 0;
-  display: block;
-  pointer-events: none;
-}
-.animals-card-title {
-  font-family: 'Calistoga', serif;
-  color: #c8a45a;
-  text-align: center;
-  margin: 0.5rem 0 0.5rem 0;
-  font-size: 1.25rem;
-  font-weight: 700;
-}
-.animals-card-content {
-  font-size: 1rem;
-  color: #222;
-  text-align: center;
-  margin: 0 0.5rem;
-  word-break: break-word;
-  padding-bottom: 0.5rem;
-}
-@media (max-width: 900px) {
-  .animals-card-grid {
-    grid-template-columns: 1fr;
-    gap: 1.2rem;
-    padding: 0 0.5rem;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-  .animals-card {
-    padding: 1.2rem 0.7rem;
-    border-radius: 10px;
-    margin: 0 auto;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  .animals-card-image {
-    max-width: 100% !important;
-    max-height: 220px !important;
-    object-fit: contain !important;
-    border-radius: 16px 16px 0 0;
-    margin: 0 0 0.7rem 0;
-    background: #fff;
-  }
-}
-@media (max-width: 600px) {
+
+/* Mobile hero adjustments remain local to Animals */
+@media (max-width: 599px) {
   .acf-hero {
     padding: 1.2rem 1rem 1rem 1rem;
     box-sizing: border-box;

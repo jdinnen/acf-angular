@@ -146,3 +146,59 @@ This is a modern Angular 20.3 application with SSR (Server-Side Rendering) capab
 ## Responsive Design Best Practice
 
 When creating new pages or components, always ensure responsiveness for tablet, phone, and desktop. All layouts and UI elements must be tested and styled for these breakpoints to guarantee a seamless experience across devices.
+
+### Material Breakpoints Used
+
+- xs (mobile): 0–599px
+- sm (small tablet): 600–899px
+- md (large tablet / small desktop): 900–1199px
+- lg+ (desktop and up): ≥1200px
+
+### Target Devices for Responsive QA
+
+- Apple iPhone 16 / Pro / Pro Max
+  - 390×844 (portrait), 844×390 (landscape)
+  - 428×926 (portrait), 926×428 (landscape)
+- Apple iPad mini 8.3"
+  - 744×1133 (portrait), 1133×744 (landscape)
+- Apple iPad Pro 11"
+  - 834×1194 (portrait), 1194×834 (landscape)
+
+Use Safari Responsive Design Mode or Xcode Simulator to verify layouts at these sizes. Acceptance checks per page:
+- ≤1199px: hamburger menu visible; desktop nav hidden; no horizontal scroll
+- ≥1200px: desktop nav visible; hamburger hidden
+- Images and cards fit container width; comfortable side padding on tablet
+- Tap targets ≥44×44; focus states visible; color contrast passes WCAG AA
+
+### Standard Gutters (site-wide)
+
+We use consistent horizontal gutters across all pages using CSS custom properties and Material breakpoints. Do not hard-code left/right padding in page components; set vertical padding only and rely on global gutters.
+
+- Variables (defined in `src/styles.css`):
+  - `--gutter-xs: 16px` (0–599px)
+  - `--gutter-sm: 24px` (600–899px)
+  - `--gutter-md: clamp(24px, 5vw, 40px)` (900–1199px)
+  - `--gutter-lg: clamp(32px, 5vw, 64px)` (≥1200px)
+- Applied globally to common wrappers: `.performers-main, .animals-main, .schedules-main, .vendors-main, .volunteer-main, .highland-games-main, .host-hotel-main, .footer-content`.
+- For components without a page wrapper (e.g., Home grid), apply gutters to the key container (e.g., `.acf-card-grid`) using the same variables.
+- Pages should only set `padding-top`/`padding-bottom` on wrappers; leave horizontal gutters to the global rules for consistency.
+
+### Responsive Grid Utilities
+
+Centralize breakpoint behavior and column counts via global utilities in `src/styles.css`:
+
+- Base utility: `.acf-grid` sets responsive `gap` using variables:
+  - `--grid-gap-xs: 0.25rem`, `--grid-gap-sm: 0.25rem`, `--grid-gap-md: 0.5rem`, `--grid-gap-lg: 0.5rem`
+- Column helpers:
+  - `.cols-1-xs` → 1 column at xs (≤599px)
+  - `.cols-2-sm` / `.cols-2-sm-up` → 2 columns at sm (600–899px) or sm and up
+  - `.cols-2-md`, `.cols-3-md`, `.cols-2-lg`, `.cols-3-lg` for larger ranges
+
+Usage example:
+
+- 1 column on phones, 2 columns from small tablets upward:
+  - `<div class="acf-grid cols-1-xs cols-2-sm-up"> ... </div>`
+
+Notes:
+- Prefer utilities over per-component media queries so phone/tablet/desktop behaviors are updated in one place.
+- Keep page-specific spacing tweaks minimal; use variables where possible.

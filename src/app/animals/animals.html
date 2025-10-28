@@ -2,13 +2,9 @@
   <img [src]="heroImg" alt="Celtic Animals Hero" class="acf-main-image" />
 </section>
 <div class="animals-main">
-  <div class="animals-card-grid">
+  <div class="animals-card-grid acf-grid cols-1-xs cols-2-sm-up" acfCardGridSizer>
     @for (card of cards; track $index) {
-      <div class="animals-card">
-        <img class="animals-card-image" [src]="card.img" [alt]="card.title" />
-        <div class="animals-card-title">{{ card.title }}</div>
-        <div class="animals-card-content">{{ card.desc }}</div>
-      </div>
+      <acf-card [image]="card.img" [title]="card.title" [content]="card.desc"></acf-card>
     }
   </div>
 </div>

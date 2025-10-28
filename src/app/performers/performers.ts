@@ -1,5 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AcfCard } from '../shared/acf-card/acf-card';
+import { AcfCardGridSizer } from '../shared/acf-card/acf-card-grid-sizer';
 
 export interface Performer {
   name: string;
@@ -63,7 +65,7 @@ export const PERFORMERS: Performer[] = [
 @Component({
   selector: 'acf-performers',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, AcfCard, AcfCardGridSizer],
   templateUrl: './performers.html',
   styleUrls: ['./performers.css']
 })

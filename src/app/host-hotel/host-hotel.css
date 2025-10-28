@@ -2,7 +2,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 2.5rem 0.5rem;
+  padding: 2.5rem 0;
   background: var(--celtic-cream, #f7f5ee);
 }
 .host-hotel-grid {
@@ -91,7 +91,7 @@
 }
 @media (max-width: 600px) {
   .host-hotel-main {
-    padding: 1.2rem 5vw;
+    padding: 1.2rem 0;
     max-width: 100vw;
     box-sizing: border-box;
   }
@@ -108,19 +108,10 @@
     font-size: 1.08rem;
   }
 }
-/* Tablet fix: ensure grid and image fit, add horizontal padding, prevent overflow */
+/* Tablet fit: ensure image scales without overflow */
 @media (min-width: 601px) and (max-width: 1024px) {
   .host-hotel-main {
-    padding-left: 5vw;
-    padding-right: 5vw;
     max-width: 100vw;
-    box-sizing: border-box;
-    overflow-x: hidden;
-  }
-  .host-hotel-grid {
-    padding-left: 3vw;
-    padding-right: 3vw;
-    max-width: 100%;
     box-sizing: border-box;
     overflow-x: hidden;
   }

@@ -11,21 +11,16 @@
 .acf-card-grid {
   margin: 0 auto;
   max-width: 1100px;
-  padding: 2rem 1rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 0.5rem;
+  padding: 2rem 0;
 }
 
-@media (max-width: 700px) {
-  .acf-card-grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    gap: 0.25rem;
-    padding: 1rem 0.25rem;
-  }
-}
+/* Apply standard gutters to home grid */
+.acf-card-grid { padding-left: var(--gutter-md); padding-right: var(--gutter-md); }
+@media (max-width: 599px) { .acf-card-grid { padding-left: var(--gutter-xs); padding-right: var(--gutter-xs); } }
+@media (min-width: 600px) and (max-width: 899px) { .acf-card-grid { padding-left: var(--gutter-sm); padding-right: var(--gutter-sm); } }
+@media (min-width: 1200px) { .acf-card-grid { padding-left: var(--gutter-lg); padding-right: var(--gutter-lg); } }
+
+@media (max-width: 700px) { .acf-card-grid { padding: 1rem 0; } }
 
 .acf-info-card {
   background: #fff;
@@ -65,73 +60,9 @@
     padding: 1.2rem 0.7rem;
     font-size: 1.1rem;
   }
-
-  .acf-card {
-    padding: 1rem;
-    max-width: 100%;
-  }
 }
 
-.acf-card {
-  border-radius: 20px;
-  background: #fff;
-  color: #222;
-  box-shadow: 0 8px 32px rgba(30, 42, 68, 0.32);
-  border: 5px solid #c8a45a;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 340px;
-  justify-content: flex-start;
-  padding: 2rem 1.5rem 1.5rem 1.5rem;
-  margin: 0.25rem;
-  overflow: hidden;
-  transition: box-shadow 0.2s, border-color 0.2s;
-}
-
-.acf-card-image {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  max-height: 260px;
-  object-fit: cover;
-  border-radius: 20px 20px 0 0;
-  margin: 0 0 1rem 0;
-  display: block;
-  pointer-events: none;
-}
-
-@media (max-width: 700px) {
-  .acf-card-image {
-    border-radius: 18px 18px 0 0 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    max-height: 180px !important;
-    object-fit: cover !important;
-    margin: 0 0 0.7rem 0;
-    background: #fff;
-    display: block;
-  }
-}
-
-.acf-card-title {
-  font-family: 'Calistoga', serif;
-  color: #c8a45a;
-  text-align: center;
-  margin: 0.5rem 0 0.5rem 0;
-  font-size: 1.25rem;
-  font-weight: 700;
-}
-
-.acf-card-content {
-  font-size: 1rem;
-  color: #222;
-  text-align: center;
-  margin: 0 0.5rem;
-  word-break: break-word;
-  padding-bottom: 0.5rem;
-}
+/* Card styles now provided by shared <acf-card>; keep only info card and grid spacing here. */
 
 body {
   background: #ede6d6 !important;
@@ -141,23 +72,4 @@ body {
   line-height: 1.5;
 }
 
-@media (max-width: 700px) {
-  .acf-card-grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    gap: 0.25rem;
-    padding: 1rem 0.25rem;
-  }
-
-  .acf-card-image {
-    border-radius: 18px 18px 0 0 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    max-height: 180px !important;
-    object-fit: cover !important;
-    margin: 0 0 0.7rem 0;
-    background: #fff;
-    display: block;
-  }
-}
+/* mobile padding tweak for grid retained above */

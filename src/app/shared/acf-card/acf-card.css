@@ -1,0 +1,83 @@
+:host { display: block; }
+
+.acf-card {
+  border-radius: 20px;
+  background: #fff;
+  color: #222;
+  box-shadow: 0 8px 32px rgba(30, 42, 68, 0.32);
+  border: 5px solid #c8a45a;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-height: var(--acf-card-total-min-h, 340px);
+  justify-content: flex-start;
+  padding: 0 1rem 1rem 1rem; /* no top padding so image sits flush */
+  margin: 0.25rem;
+  overflow: hidden;
+  transition: box-shadow 0.2s, border-color 0.2s, transform 0.12s;
+  text-decoration: none; /* for anchor variant */
+}
+
+.acf-card:hover,
+.acf-card:focus {
+  box-shadow: 0 8px 40px rgba(30, 42, 68, 0.28);
+  border-color: #095c2e;
+}
+
+/* Fixed image area to standardize card heights */
+.acf-card-image-box {
+  width: 100%;
+  aspect-ratio: 4 / 3; /* consistent across pages */
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  overflow: hidden;
+  background: #fff;
+  display: block;
+  margin-bottom: 0.15rem; /* tighter space below image */
+}
+
+.acf-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* avoid cropping across breakpoints */
+  display: block;
+  pointer-events: none;
+  border-top-left-radius: 20px; /* reinforce rounded corners in case of overrides */
+  border-top-right-radius: 20px;
+}
+
+/* Mobile: do not crop images; keep rounded top corners */
+@media (max-width: 599px) {
+  .acf-card-image { object-fit: contain !important; }
+  .acf-card-image-box { aspect-ratio: 4 / 3; }
+  .acf-card {
+    padding: 0 0.75rem 0.85rem 0.75rem; /* remove top padding on mobile too */
+    border-radius: 14px;
+  }
+}
+
+
+.acf-card-title {
+  font-family: 'Calistoga', serif;
+  color: #c8a45a;
+  text-align: center;
+  margin: 0.2rem 0 0.25rem 0; /* further reduce spacing under image */
+  font-size: 1.25rem;
+  font-weight: 700;
+  min-height: var(--acf-card-title-min-h, auto); /* normalized per-grid */
+}
+
+.acf-card-content {
+  font-size: 1rem;
+  color: #222;
+  text-align: center;
+  margin: 0 0.5rem;
+  word-break: break-word;
+  padding-bottom: 0.4rem;
+  min-height: var(--acf-card-content-min-h, auto); /* normalized per-grid */
+  flex: 1 1 auto;
+}
+
+@media (min-width: 600px) and (max-width: 1199px) { }
+
+@media (min-width: 1200px) { }

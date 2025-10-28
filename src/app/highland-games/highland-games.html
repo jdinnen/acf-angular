@@ -8,20 +8,9 @@
       To Sign Up to Compete:
       <a href="https://ironpodium.com/browse/event/austin-highland-games-2025" target="_blank" rel="noopener" class="highland-games-signup-link">Click here!</a>
     </div>
-    <div class="acf-card-grid">
+  <div class="acf-card-grid acf-grid cols-1-xs cols-2-sm cols-3-md-up" acfCardGridSizer>
       @for (card of cards(); track $index) {
-        <div class="acf-card highland-games-card"
-          (click)="openInfo(card, $event)"
-          tabindex="0"
-          role="button"
-          aria-label="More info about {{card.title}}"
-          (keydown.enter)="openInfo(card, $event)"
-          (keydown.space)="openInfo(card, $event)">
-          <img class="acf-card-image" [src]="card.image" [alt]="card.title" />
-          <h3 class="acf-card-title">{{ card.title }}</h3>
-          <div class="acf-card-content">{{ card.description }}</div>
-          <button class="highland-games-more-btn" type="button" (click)="$event.stopPropagation(); openInfo(card, $event)">More Info</button>
-        </div>
+  <acf-card [image]="card.image" [title]="card.title" [content]="card.description" [clickable]="true" (activate)="openInfo(card)"></acf-card>
       }
     </div>
   </div>

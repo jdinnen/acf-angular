@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatCardModule } from '@angular/material/card';
-import { MatGridListModule } from '@angular/material/grid-list';
+import { AcfCard } from '../shared/acf-card/acf-card';
+import { AcfCardGridSizer } from '../shared/acf-card/acf-card-grid-sizer';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatGridListModule],
+  imports: [CommonModule, AcfCard, AcfCardGridSizer],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
