@@ -2,7 +2,8 @@
 
 ## Project Goals
 
-This project is a full remake of [austincelticfestival.com](https://austincelticfestival.com) using Angular 20.3, with a focus on modern Material Design principles and standard Angular coding practices. The goal is to deliver a beautiful, accessible, and high-performance web experience that reflects the festival's brand and content.
+This project is a full remake of <https://austincelticfestival.com>.
+Using Angular 20.3, with a focus on modern Material Design principles and standard Angular coding practices. The goal is to deliver a beautiful, accessible, and high-performance web experience that reflects the festival's brand and content.
 
 ## Modern Angular & Material Design Best Practices (2025)
 
