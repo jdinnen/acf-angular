@@ -37,10 +37,11 @@ jobs:
           mkdir -p out
           cp -R dist/acf-angular/browser/* out/
           # Set base href for project pages (https://<user>.github.io/<repo>/)
-          find out -name "*.html" -print0 | xargs -0 -I{} sed -i 's#<base href="/">#<base href="/acf-angular/">#g' {}
-          # Fix absolute image paths so they work under /acf-angular
-          find out -name "*.html" -print0 | xargs -0 -I{} sed -i 's#\(["'"'"'"'"']\)/images/#\1/acf-angular/images/#g' {}
-          find out -name "*.css" -print0 | xargs -0 -I{} sed -i 's#url(/images/#url(/acf-angular/images/#g' {}
+          find out -type f -name "*.html" -print0 | xargs -0 sed -i 's#<base href="/">#<base href="/acf-angular/">#g'
+          # Fix absolute image paths so they work under /acf-angular (handle both " and ')
+          find out -type f -name "*.html" -print0 | xargs -0 sed -i 's#="/images/#="/acf-angular/images/#g'
+          find out -type f -name "*.html" -print0 | xargs -0 sed -i "s#='/images/#='/acf-angular/images/#g"
+          find out -type f -name "*.css" -print0 | xargs -0 sed -i 's#url(/images/#url(/acf-angular/images/#g'
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
