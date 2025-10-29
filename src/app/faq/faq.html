@@ -6,7 +6,15 @@
         <mat-expansion-panel-header>
           <mat-panel-title>{{ faq.question }}</mat-panel-title>
         </mat-expansion-panel-header>
-        <div class="faq-answer">{{ faq.answer }}</div>
+  <div class="faq-answer">
+    @for (part of splitAnswer(faq.answer); track $index) {
+      @if (part.email) {
+        <a href="mailto:austincelticfestival@gmail.com" class="acf-mailto-link">austincelticfestival@gmail.com</a>
+      } @else {
+        {{ part.text }}
+      }
+    }
+  </div>
       </mat-expansion-panel>
     }
   </mat-accordion>

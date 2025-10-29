@@ -1,3 +1,41 @@
+/* Strongest override for mailto link color inside Angular Material expansion panel */
+.mat-expansion-panel-content .acf-mailto-link,
+.mat-expansion-panel-content a.acf-mailto-link,
+.faq-answer .acf-mailto-link {
+  color: #2b7a2b !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  border-bottom: 1.5px dotted #c8a45a !important;
+  transition: color 0.18s, border-bottom 0.18s !important;
+  display: inline !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  background: none !important;
+}
+.mat-expansion-panel-content .acf-mailto-link:hover,
+.mat-expansion-panel-content .acf-mailto-link:focus,
+.faq-answer .acf-mailto-link:hover,
+.faq-answer .acf-mailto-link:focus {
+  color: #c8a45a !important;
+  border-bottom: 1.5px solid #2b7a2b !important;
+  text-decoration: underline !important;
+}
+/* Themed mailto link for FAQ */
+.faq-answer a.acf-mailto-link, .faq-answer .acf-mailto-link {
+  color: #2b7a2b !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  border-bottom: 1.5px dotted #c8a45a !important;
+  transition: color 0.18s, border-bottom 0.18s !important;
+  display: inline !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+}
+.faq-answer a.acf-mailto-link:hover, .faq-answer a.acf-mailto-link:focus, .faq-answer .acf-mailto-link:hover, .faq-answer .acf-mailto-link:focus {
+  color: #c8a45a !important;
+  border-bottom: 1.5px solid #2b7a2b !important;
+  text-decoration: underline !important;
+}
 .faq-page {
   max-width: 700px;
   margin: 2rem auto;

@@ -10,18 +10,14 @@ import { CommonModule } from '@angular/common';
   styleUrl: './faq.css'
 })
 export class FaqComponent {
-  faqs = [
+  faqs: { question: string; answer: string }[] = [
     {
       question: 'Can we bring our dog or pet?',
       answer: `No. Pioneer Farms does not allow pets. The animals that participate in the festival are cleared by our Animal Director and are there as performers. If you have a "Celtic" dog breed that you would like to have to participate in the Celtic dog parade please visit the Animal Page on our website for a Celtic Show Animal Application and send it to our Animal Director.`
     },
     {
-      question: 'I have a question about my ticket.',
-      answer: `Tickets are being handled by Sports Illustrated Tickets this year. Please email questions/concerns to orders@sitickets.com.`
-    },
-    {
       question: 'Lost and Found?',
-      answer: `Lost and found items can be taken to the ACF Information Booth located where we sell t-shirts and performer CDs. You can also email austincelticfestival@gmail.com for missing items. But, that email address will not be responsive during and immediately after the festival. It will take a few days to get through a large number of emails sent during the festival.`
+  answer: `Lost and found items can be taken to the ACF Information Booth located where we sell t-shirts and performer CDs. You can also email austincelticfestival@gmail.com for missing items. But, that email address will not be responsive during and immediately after the festival. It will take a few days to get through a large number of emails sent during the festival.`
     },
     {
       question: 'No Videotaping',
@@ -49,7 +45,7 @@ export class FaqComponent {
     },
     {
       question: 'I am interested in headlining the festival or recommending a headliner',
-      answer: `Headliners are selected by our festival director. You may email her your suggestions or your interest at austincelticfestival@gmail.com. Headliners for the ACF are selected based on their international standing in the traditional community as well as their ability to conduct workshops and extend their knowledge of the tradition to our attendees. Because our goal is to impart and preserve the traditional elements of the Celtic culture, there is very limited space in our headliner slots for alternative Celtic styles beyond the traditional.`
+  answer: `Headliners are selected by our festival director. You may email her your suggestions or your interest at austincelticfestival@gmail.com. Headliners for the ACF are selected based on their international standing in the traditional community as well as their ability to conduct workshops and extend their knowledge of the tradition to our attendees. Because our goal is to impart and preserve the traditional elements of the Celtic culture, there is very limited space in our headliner slots for alternative Celtic styles beyond the traditional.`
     },
     {
       question: 'When will the stage schedule be posted?',
@@ -57,11 +53,39 @@ export class FaqComponent {
     },
     {
       question: 'I think the festival is great! How can I further support it?',
-      answer: `Visit the volunteer page and join us for a great weekend as an insider. Send us loving feedback to austincelticfestival@gmail.com and leave recommendations on our Facebook page. Tell all your friends about our great festival!`
+  answer: `Visit the volunteer page and join us for a great weekend as an insider. Send us loving feedback to austincelticfestival@gmail.com and leave recommendations on our Facebook page. Tell all your friends about our great festival!`
     },
     {
       question: 'Are you handicap accessible?',
       answer: `Yes, but it is an outdoor festival. The festival takes place in a venue not owned by us that for the most part works to recreate life in the 1800s. They do have limited handicap parking and restrooms. We also rent additional handicap-accessible portable toilets. Most of the staging area takes place on low-cut grass and several well-worn footpaths around the perimeter. The houses that we will be using for the public have ramps at the back of the houses for handicap entrances. There is limited accessible parking available near the festival on a first-come, first-serve basis to vehicles displaying a state-issued handicapped plate or placard. The person to whom the placard or plate is issued must be in the vehicle, as a driver or passenger. If you are traveling with a mobility impaired person, you can double park and let them exit the vehicle at the main gate while you have your hazard lights on. Once they are in the park, you can then go and find whatever parking is available. The same is for picking up someone mobility impaired.`
     }
+    ,
   ];
+
+
+  // Utility: Split answer into parts for mailto rendering
+  splitAnswer(answer: string): Array<{text: string, email?: string}> {
+    const email = 'austincelticfestival@gmail.com';
+    const parts: Array<{text: string, email?: string}> = [];
+    let lastIdx = 0;
+    let idx: number;
+    while ((idx = answer.indexOf(email, lastIdx)) !== -1) {
+      if (idx > lastIdx) {
+        parts.push({ text: answer.substring(lastIdx, idx) });
+      }
+      // Only push the email if it is a perfect match (no whitespace)
+      const found = answer.substr(idx, email.length);
+      if (found.trim() === email) {
+        parts.push({ text: '', email });
+      } else {
+        // fallback: treat as text if not a perfect match
+        parts.push({ text: found });
+      }
+      lastIdx = idx + email.length;
+    }
+    if (lastIdx < answer.length) {
+      parts.push({ text: answer.substring(lastIdx) });
+    }
+    return parts;
+  }
 }
