@@ -64,6 +64,8 @@ app-root {
 	box-sizing: border-box;
 	width: 100%;
 	height: 100%;
+	-webkit-text-size-adjust: 100%; /* prevent iOS font boosting */
+	text-size-adjust: 100%;
 }
 
 /* Prevent accidental horizontal scroll from any overflowing child */
